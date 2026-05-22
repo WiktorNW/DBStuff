@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './../Components/footer';
 
 function Main() {
-    document.getElementById("webTitle").textContent = "Dirty Bomb Stuff";
+    document.title = "Dirty Bomb Stuff";
     var color = [];
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     isDarkTheme ? color = ["dark", "light", "black"] : color = ["light", "dark", "white"];

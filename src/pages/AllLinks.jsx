@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../Components/footer';
 
 function AllLinks() {
-    document.getElementById("webTitle").textContent = "DBS - All Links";
+    document.title = "DBS - All Links";
 var color = [];
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     isDarkTheme ? color = ["dark", "light", "black"] : color = ["light", "dark", "white"];

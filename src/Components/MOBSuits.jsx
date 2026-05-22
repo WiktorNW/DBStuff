@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import suit_list from '../list/suit_list.js';
 
 function MOBSuits() {
-    document.getElementById("webTitle").textContent = "DBS - Mercs' Suits Gallery";
     var noImg = "img/noimg.png";
     var [ham, setHam] = useState(["none"]);
     var [style, setStyle] = useState([300, "default", "Default", "default"]);

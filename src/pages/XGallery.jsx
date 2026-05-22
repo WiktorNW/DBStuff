@@ -7,7 +7,7 @@ import XMOBGallery from '../Components/XMOBgallery';
 import { useState } from 'react';
 
 function XGallery() {
-    document.getElementById("webTitle").textContent = "DBS - *Illegal* Weapon Finish Gallery";
+    document.title = "DBS - *Illegal* Weapon Finish Gallery";
     var isMobileDevice = /android|iphone|kindle|ipad/i.test(navigator.userAgent);
     var [winWidth, setWinWidth] = useState(window.innerWidth);
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;

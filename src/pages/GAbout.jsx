@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 
 function GAbout() {
-    document.getElementById("webTitle").textContent = "DBS - About WFG";
+    document.title = "DBS - About WFG";
     var color = [];
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     isDarkTheme ? color = ["dark", "light", "black"] : color = ["light", "dark", "white"];

@@ -7,7 +7,7 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import { useState } from 'react';
 
 function Changelog() {
-    document.getElementById("webTitle").textContent = "DBS - WFG Changelog";
+    document.title = "DBS - WFG Changelog";
     var color = [];
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     isDarkTheme ? color = ["dark", "light", "black"] : color = ["light", "dark", "white"];

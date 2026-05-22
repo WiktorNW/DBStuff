@@ -7,7 +7,7 @@ import MOBGallery from '../Components/MOBgallery';
 import { useState } from 'react';
 
 function Gallery() {
-    document.getElementById("webTitle").textContent = "DBS - Weapon Finish Gallery";
+    document.title = "DBS - Weapon Finish Gallery";
     var isMobileDevice = /android|iphone|kindle|ipad/i.test(navigator.userAgent);
     var [winWidth, setWinWidth] = useState(window.innerWidth);
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;

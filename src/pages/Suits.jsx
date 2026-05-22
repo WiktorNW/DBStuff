@@ -7,7 +7,7 @@ import MOBSuits from '../Components/MOBSuits';
 import { useState } from 'react';
 
 function Suits() {
-    document.getElementById("webTitle").textContent = "DBS - Weapon Finish Gallery";
+    document.title = "DBS - Mercs' Suits Gallery";
     var isMobileDevice = /android|iphone|kindle|ipad/i.test(navigator.userAgent);
     var [winWidth, setWinWidth] = useState(window.innerWidth);
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;

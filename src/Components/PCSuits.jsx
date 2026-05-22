@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import suit_list from '../list/suit_list.js';
 
 function PCSuits() {
-    document.getElementById("webTitle").textContent = "DBS - Mercs' Suits Gallery";
     var noImg = "img/noimg.png";
     var [grid, setGrid] = useState([3, 6]);
     var [style, setStyle] = useState([300, "default", "Default", "default"]);
