@@ -4,7 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import Footer from './../Components/footer';
 import List from './../lists';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function PCGallery({color}) {
@@ -3626,7 +3626,7 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullthunder[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
@@ -3638,7 +3638,7 @@ function PCGallery({color}) {
                     {List.fullthunder[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullthunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
@@ -3651,7 +3651,7 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullthunder[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
@@ -3662,7 +3662,7 @@ function PCGallery({color}) {
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullthunder[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
@@ -3673,7 +3673,7 @@ function PCGallery({color}) {
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullthunder[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
@@ -3685,7 +3685,7 @@ function PCGallery({color}) {
                     {List.fullthunder[6].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullthunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
@@ -3758,7 +3758,7 @@ function PCGallery({color}) {
                         </div></div>
                     ))}
                 </div>)
-            case 246: { /* VASSILI */ }
+            case 246: { /* FULL VASSILI */ }
                 return (<div>
                     { /* Default */ }
                     <div className="mt-4">
@@ -3999,8 +3999,7 @@ function PCGallery({color}) {
                         <button className="dropdown-item" onClick={() => (setStyle([221, "thunder", "Thunder", "thunder"]))}><img src="img/merc/thunder.png" /> Thunder</button>
                         <button className="dropdown-item" onClick={() => (setStyle([222, "turtle", "Turtle", "turtle"]))}><img src="img/merc/turtle.png" /> Turtle</button>
                         <button className="dropdown-item" onClick={() => (setStyle([223, "vassili", "Vassili", "vassili"]))}><img src="img/merc/vassili.png" /> Vassili</button>
-                        <div className={`dropdown-divider d-${exp}`}></div> {/* Idea for future (overkill) */}
-                        <span className={`d-${exp} text-center`}>W.I.P FULL MERCS (Refreshed screenshots only)</span>
+                        <span className={`text-center d-${exp}`}>W.I.P FULL MERCS (Refreshed screenshots only)</span>
                         <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([224, "aimee", "Full Aimee", "aimee"]))}><img src="img/merc/aimee.png" /> Full Aimee</button>
                         <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([225, "arty", "Full Arty", "arty"]))}><img src="img/merc/arty.png" /> Full Arty</button>
                         <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([226, "aura", "Full Aura", "aura"]))}><img src="img/merc/aura.png" /> Full Aura</button>
@@ -4114,55 +4113,59 @@ function PCGallery({color}) {
                     </div>
                 </div>
 
+                <div className={`mt-4 w-100 d-${style[4] ? "block" : "none"}`}>
+
+                    { /* HQM */ }
+
+                    <div className={`ms-5 d-${style[4] == "hqm" ? "block" : "none"}`}>
+                        <b className={`text-${color[1]}`} title="High Quality Materials">HQM: </b>
+                        <div className="btn-group">
+                            <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
+                            <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
+                        </div>
+                    </div>
+
+                    { /* WEAR */ }
+
+                    <div className={`ms-5 d-${exp} d-${style[4] == "wear" ? "block" : "none"}`}>
+                        <b className={`text-${color[1]}`}>WEAR: </b>
+                        <div className="btn-group">
+                            <button className={`rounded-start btn btn${wearBut[0]}-${color[1]} border-2`} onClick={() => (setWear(""), setWearBut(["", "-outline", "-outline", "-outline", "-outline"]))}>PRISTINE</button>
+                            <button className={`btn btn${wearBut[1]}-${color[1]} border-2`} onClick={() => (setWear("refined/"), setWearBut(["-outline", "", "-outline", "-outline", "-outline"]))}>REFINED</button>
+                            <button className={`btn btn${wearBut[2]}-${color[1]} border-2`} onClick={() => (setWear("standard/"), setWearBut(["-outline", "-outline", "", "-outline", "-outline"]))}>STANDARD</button>
+                            <button className={`btn btn${wearBut[3]}-${color[1]} border-2`} onClick={() => (setWear("worn/"), setWearBut(["-outline", "-outline", "-outline", "", "-outline"]))}>WORN</button>
+                            <button className={`rounded-end btn btn${wearBut[4]}-${color[1]} border-2`} onClick={() => (setWear("scarred/"), setWearBut(["-outline", "-outline", "-outline", "-outline", ""]))}>SCARRED</button>
+                        </div>
+                    </div>
+
+                    { /* Contraband Suit */ }
+
+                    <div className={`ms-5 d-${exp} d-${style[4] == "contrab" ? "block" : "none"}`}>
+                        <b className={`text-${color[1]}`}>SUIT: </b>
+                        <div className="btn-group">
+                            <button className={`rounded-start btn btn${cbBut[0]}-${color[1]} border-2`} onClick={() => (setCb(""), setCbBut(["", "-outline", "-outline"]))}>RankedEagle</button>
+                            <button className={`btn btn${cbBut[1]}-${color[1]} border-2`} onClick={() => (setCb("halloween17/"), setCbBut(["-outline", "", "-outline",]))}>Halloween17</button>
+                            <button className={`btn btn${cbBut[2]}-${color[1]} border-2`} onClick={() => (setCb("sd/"), setCbBut(["-outline", "-outline", "",]))}>SplashDamage</button>
+                        </div>
+                    </div>
+
+                    { /* Tapir Suit */ }
+
+                    <div className={`ms-5 d-${exp} d-${style[4] == "tapr" ? "block" : "none"}`}>
+                        <b className={`text-${color[1]}`}>SUIT: </b>
+                        <div className="btn-group">
+                            <button className={`rounded-start btn btn${taprBut[0]}-${color[1]} border-2`} onClick={() => (setTaprC(""), setTaprBut(["", "-outline", "-outline"]))}>RankedEagle</button>
+                            <button className={`btn btn${taprBut[1]}-${color[1]} border-2`} onClick={() => (setTaprC("twitch/"), setTaprBut(["-outline", "", "-outline",]))}>Twitch</button>
+                            <button className={`btn btn${taprBut[2]}-${color[1]} border-2`} onClick={() => (setTaprC("fragment/"), setTaprBut(["-outline", "-outline", "",]))}>Fragment</button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
             <div className={`m-auto w-75 bg-${color[0]} shadow mt-4 justify-content-center rounded`}>
                 <h2 className={`text-center pt-4 text-${color[1]}`}><img src={style[0] >= 200 && style[0] <= 246 ? `img/merc/${style[3]}.png` : style[0] >= 100 && style[0] <= 141 ? `img/weapon/${color[1]}/${style[3]}.png` : `img/collection/${style[3]}.png`} className="mb-2" /> { style[2] }</h2>
-
-                { /* HQM */ }
-
-                <div className={`ms-5 d-${style[4] == "hqm" ? "block" : "none"}`}>
-                    <b className={`text-${color[1]}`} title="High Quality Materials">HQM: </b>
-                    <div className="btn-group">
-                        <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
-                        <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
-                    </div>
-                </div>
-
-                { /* WEAR */ }
-
-                <div className={`ms-5 d-${style[4] == "wear" ? "block" : "none"} d-${exp}`}>
-                    <b className={`text-${color[1]}`}>WEAR: </b>
-                    <div className="btn-group">
-                        <button className={`rounded-start btn btn${wearBut[0]}-${color[1]} border-2`} onClick={() => (setWear(""), setWearBut(["", "-outline", "-outline", "-outline", "-outline"]))}>PRISTINE</button>
-                        <button className={`btn btn${wearBut[1]}-${color[1]} border-2`} onClick={() => (setWear("refined/"), setWearBut(["-outline", "", "-outline", "-outline", "-outline"]))}>REFINED</button>
-                        <button className={`btn btn${wearBut[2]}-${color[1]} border-2`} onClick={() => (setWear("standard/"), setWearBut(["-outline", "-outline", "", "-outline", "-outline"]))}>STANDARD</button>
-                        <button className={`btn btn${wearBut[3]}-${color[1]} border-2`} onClick={() => (setWear("worn/"), setWearBut(["-outline", "-outline", "-outline", "", "-outline"]))}>WORN</button>
-                        <button className={`rounded-end btn btn${wearBut[4]}-${color[1]} border-2`} onClick={() => (setWear("scarred/"), setWearBut(["-outline", "-outline", "-outline", "-outline", ""]))}>SCARRED</button>
-                    </div>
-                </div>
-
-                { /* Contraband Suit */ }
-
-                <div className={`ms-5 d-${style[4] == "contrab" ? "block" : "none"} d-${exp}`}>
-                    <b className={`text-${color[1]}`}>SUIT: </b>
-                    <div className="btn-group">
-                        <button className={`rounded-start btn btn${cbBut[0]}-${color[1]} border-2`} onClick={() => (setCb(""), setCbBut(["", "-outline", "-outline"]))}>RankedEagle</button>
-                        <button className={`btn btn${cbBut[1]}-${color[1]} border-2`} onClick={() => (setCb("halloween17/"), setCbBut(["-outline", "", "-outline",]))}>Halloween17</button>
-                        <button className={`btn btn${cbBut[2]}-${color[1]} border-2`} onClick={() => (setCb("sd/"), setCbBut(["-outline", "-outline", "",]))}>SplashDamage</button>
-                    </div>
-                </div>
-
-                { /* Tapir Suit */ }
-
-                <div className={`ms-5 d-${style[4] == "tapr" ? "block" : "none"} d-${exp}`}>
-                    <b className={`text-${color[1]}`}>SUIT: </b>
-                    <div className="btn-group">
-                        <button className={`rounded-start btn btn${taprBut[0]}-${color[1]} border-2`} onClick={() => (setTaprC(""), setTaprBut(["", "-outline", "-outline"]))}>RankedEagle</button>
-                        <button className={`btn btn${taprBut[1]}-${color[1]} border-2`} onClick={() => (setTaprC("twitch/"), setTaprBut(["-outline", "", "-outline",]))}>Twitch</button>
-                        <button className={`btn btn${taprBut[2]}-${color[1]} border-2`} onClick={() => (setTaprC("fragment/"), setTaprBut(["-outline", "-outline", "",]))}>Fragment</button>
-                    </div>
-                </div>
 
                 <div className={style[0] >= 200 && style[0] <= 246 || style[0] > 311 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]}`}>
                     {renderWepImgs(style[0], style[1], style[2])}
