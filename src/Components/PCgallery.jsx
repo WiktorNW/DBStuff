@@ -1,4 +1,5 @@
 import './../App.css';
+import './../stylejw.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
@@ -11,7 +12,7 @@ function PCGallery({color}) {
     console.log(navigator.userAgent);
     var noImg = "img/noimg.png";
     var [grid, setGrid] = useState([3, 6]);
-    var [style, setStyle] = useState([19, "default", "Default", "default"]);
+    var [style, setStyle] = useState([19, "default", "Default", "default", "-def"]);
     var [exp, setExp] = useState(["none"]);
     var [hqm, setHqm] = useState(["true", "", "-outline"]);
     var [wearBut, setWearBut] = useState(["", "-outline", "-outline", "-outline", "-outline"])
@@ -20,6 +21,7 @@ function PCGallery({color}) {
     var [cb, setCb] = useState("");
     var [taprBut, setTaprBut] = useState(["", "-outline", "-outline"]);
     var [taprC, setTaprC] = useState("");
+    var [pubTest, setPubTest] = useState("none")
 
     var SharSDMsg = 'Existence of this particular weapon skin IS NOT officially confirmed.\nOne of the devs was spotted with it in game.\nAlso it\'s not possible to trade for this card so please, DON\'T CONTACT\nSplash Damage devs for additional info or in order to buy/obtain it.\n\nScreenshot done on old version of DB and skin\'s displayed thanks to\ncurrently patched bugs';
     var SDJavMsg = 'Existence of these weapon skins for Javelin IS NOT officially confirmed.\nOne of the devs was spotted with them in game.\nAlso it\'s not possible to trade for this card so please, DON\'T CONTACT\nSplash Damage devs for additional info or in order to buy/obtain it.\n\nScreenshots done on old version of DB and skins are displayed thanks to\ncurrently patched bugs';
@@ -30,7 +32,7 @@ function PCGallery({color}) {
                 return List.ListClassic.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
                 // ListClassic.map(weapon) - Function that goes through all the records in array and for each one creates 1 image block
@@ -47,140 +49,140 @@ function PCGallery({color}) {
                 return List.ListAddJav.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 3: { /* Last Merc: Guardian */ }
                 return List.ListAddGrd.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 4: { /* Last Merc: Hunter */ }
                 return List.ListAddHntr.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 5: { /*Alienware */ }
                 return List.ListAlien.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 6: { /* Just Proxy */ }
                 return List.ListProx.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 7: { /* Just Aimee */ }
                 return List.ListAimee.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 8: { /* Just Guardian */ }
                 return List.ListGrd.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 9: { /* Just Hunter */ }
                 return List.ListHntr.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 10: { /* Just Javelin */ }
                 return List.ListJav.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 11: { /* Humble */ }
                 return List.ListHumb.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 12: { /* Logitech */ }
                 return List.ListLog.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 13: { /* Founders */ }
                 return List.ListFounders.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 14: { /* OutforBlood */ }
                 return List.ListBlood.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 15: { /* TacticalBlack */ }
                 return List.ListTacticalB.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 16: { /* Just Turtle */ }
                 return List.ListTurtle.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 17: { /* Just Phoenix */ }
                 return List.ListPhoenix.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 18: { /* Faction */ }
                 return List.ListFaction.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 19: { /* Default */ }
                 return List.ListAll.map((weapon) => (
                     <div className="mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 20: { /* Nexon */ }
                 return List.ListNexon.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 21: { /* SD with Javelin */ }
                 return List.ListSpecialSD.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} title={weapon.wepName == 'SHAR-C*' ? SharSDMsg : ''} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} title={weapon.wepName == 'SHAR-C*' ? SharSDMsg : ''} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
 
@@ -188,280 +190,280 @@ function PCGallery({color}) {
                 return List.wepA.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/ahnuhld.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/ahnuhld.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 102: { /* AREVAROV 9 */ }
                 return List.wep11.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/arevarov.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/arevarov.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 103: { /* BLISHLOK */ }
                 return List.wepBL.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/blishlok.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/blishlok.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 104: { /* BR=16 */ }
                 return List.wepB.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/br.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/br.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 105: { /* CAULDEN */ }
                 return List.wep7.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/caulden.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/caulden.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 106: { /* CROTZNI */ }
                 return List.wepCR.map((skin) => ( 
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/crotzni.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/crotzni.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 107: { /* DE .50 */ }
                 return List.wep5.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/de.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/de.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 108: { /* DREISS AR */ }
                 return List.wepD.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/dreiss.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/dreiss.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 109: { /* EMPIRE-9 */ }
                 return List.wep3.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/empire.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/empire.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 110: { /* FEL-IX */ }
                 return List.wepF.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/felix.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/felix.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 111: { /* GRANDEUR SR */ }
                 return List.wepG.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/grandeur.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/grandeur.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 112: { /* HOCHFIR SMG */ }
                 return List.wepKE.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hochfir.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/hochfir.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 113: { /* HOIGAT .224 */ }
                 return List.wep10.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hoigat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/hoigat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 114: { /* HOLLUNDS 880 */ }
                 return List.wepH.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hollunds.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/hollunds.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 115: { /* HURTSALL 2K */ }
                 return List.wepHU.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hurtsall.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/hurtsall.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 116: { /* K-121 */ }
                 return List.wepK.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/k121.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/k121.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 117: { /* KEK-10 */ }
                 return List.wepC.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/kek.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/kek.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 118: { /* M4A1 */ }
                 return List.wepM.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/m4a1.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/m4a1.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 119: { /* M9 */ }
                 return List.wep4.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/m9.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/m9.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 120: { /* MK46 */ }
                 return List.wepMA.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/mk46.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/mk46.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 121: { /* MOA SNPR-1 */ }
                 return List.wepMO.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/moa.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/moa.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 122: { /* MP400 */ }
                 return List.wep1.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/mp400.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/mp400.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 123: { /* PDP-70 */ }
                 return List.wepP.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/pdp.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/pdp.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 124: { /* REMBURG-7 */ }
                 return List.wepR.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/remburg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/remburg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 125: { /* RYBURN */ }
                 return List.wep4r.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/ryburn.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/ryburn.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 126: { /* SELBSTADT .40 */ }
                 return List.wep8.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/selbstadt.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/selbstadt.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 127: { /* SHAR-C */ }
                 return List.wepSH.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/shar.jpg` || noImg} title={skin.fileName == 'sd' ? SharSDMsg : ''} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/shar.jpg` || noImg} title={skin.fileName == 'sd' ? SharSDMsg : ''} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 128: { /* SIMEON .357 */ }
                 return List.wep6.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/simeon.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/simeon.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 129: { /* SMG-9 */ }
                 return List.wepSM.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/smg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/smg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 130: { /* SMJÜTH & WHETSMAN .40 */ }
                 return List.wep9.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/sw.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/sw.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 131: { /* STARK AR */ }
                 return List.wepS.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/stark.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/stark.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 132: { /* TIMIK-47 */ }
                 return List.wepT.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/timik.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/timik.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 133: { /* TØLEN MP */ }
                 return List.wep2.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/tolen.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}/tolen.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 134: { /* BECKHILl COMBAT KNIFE */ }
                 return List.melee1.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}beckhill.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}beckhill.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 135: { /* STILNOTTO STILETTO */ }
                 return List.melee2.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}stiletto.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}stiletto.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 136: { /* CRICKET BAT */ }
                 return List.melee3.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}bat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}bat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 137: { /* KATANA */ }
                 return List.melee4.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}katana.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}katana.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 138: { /* KUKRI */ }
                 return List.melee5.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}kukri.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}kukri.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 139: { /* BATONS */ }
                 return List.melee6a.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}tomahawk.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}tomahawk.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 140: { /* TACTICAL COMBAT AXE */ }
                 return List.melee6b.map((skin) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}batons.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}batons.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
             case 141: { /* UlU */ }
@@ -469,7 +471,7 @@ function PCGallery({color}) {
                     <div className=" mt-4">
                         {console.log(List.aimee)}
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}ulu.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${skin.fileName}ulu.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow} w-100`} />
                     </div>
                 ))
 
@@ -478,11 +480,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aimee[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -490,11 +492,11 @@ function PCGallery({color}) {
                     {List.aimee[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.aimee[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -503,33 +505,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aimee[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /*SplashDamage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aimee[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aimee[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -539,11 +541,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.arty[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -551,11 +553,11 @@ function PCGallery({color}) {
                     {List.arty[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.arty[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -564,44 +566,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.arty[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.arty[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.arty[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.arty[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -611,11 +613,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aura[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -623,11 +625,11 @@ function PCGallery({color}) {
                     {List.aura[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.aura[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -636,44 +638,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aura[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aura[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aura[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.aura[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -683,11 +685,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.bushwhacker[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -695,11 +697,11 @@ function PCGallery({color}) {
                     {List.bushwhacker[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.bushwhacker[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -708,33 +710,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.bushwhacker[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.bushwhacker[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.bushwhacker[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -744,11 +746,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fletcher[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -756,11 +758,11 @@ function PCGallery({color}) {
                     {List.fletcher[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fletcher[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -769,61 +771,47 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fletcher[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fletcher[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fletcher[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
-                    { /* Additional for me */}
-                    {List.fletcher[8].map((skin) => (
-                        <div className={`mt-4 d-${exp}`}>
-                            <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
-                                {List.fletcher[0].map((weapon) => (
-                                    <div className="mb-4">
-                                        <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
                 </div>)
             case 206: { /* FRAGGER */ }
                 return (<div>
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fragger[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -831,11 +819,11 @@ function PCGallery({color}) {
                     {List.fragger[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fragger[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -844,44 +832,44 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fragger[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fragger[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fragger[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fragger[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -891,11 +879,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.guardian[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -903,25 +891,11 @@ function PCGallery({color}) {
                     {List.guardian[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.guardian[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                    { /* Additional for me */}
-                    {List.guardian[3].map((skin) => (
-                        <div className={`mt-4 d-${exp}`}>
-                            <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
-                                {List.guardian[0].map((weapon) => (
-                                    <div className="mb-4">
-                                        <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -933,11 +907,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.hunter[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -945,11 +919,11 @@ function PCGallery({color}) {
                     {List.hunter[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.hunter[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -957,11 +931,11 @@ function PCGallery({color}) {
                     ))}
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/arctic.png`} className="mb-2" /> HunterSpecial</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.hunter[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -971,11 +945,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.javelin[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -983,38 +957,38 @@ function PCGallery({color}) {
                     {List.javelin[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.javelin[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
                         </div>
                     ))}
                     { /* SplashDmage */ }
-                    <div className="mt-4">
+                    {/*<div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage*</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.javelin[3].map((def) => (
                         <div className="mb-4" title={SDJavMsg}>
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
-                    </div></div>
+                    </div></div>*/}
                 </div>)
             case 210: { /* KIRA */ }
                 return (<div>
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.kira[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1022,11 +996,11 @@ function PCGallery({color}) {
                     {List.kira[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.kira[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1035,22 +1009,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.kira[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.kira[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1060,11 +1034,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.nader[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1072,11 +1046,11 @@ function PCGallery({color}) {
                     {List.nader[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.nader[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1085,33 +1059,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.nader[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.nader[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.nader[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1121,11 +1095,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phantom[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1133,11 +1107,11 @@ function PCGallery({color}) {
                     {List.phantom[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.phantom[skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1146,33 +1120,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phantom[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phantom[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phantom[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1182,11 +1156,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phoenix[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1194,11 +1168,11 @@ function PCGallery({color}) {
                     {List.phoenix[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.phoenix[skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1207,44 +1181,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phoenix[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phoenix[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phoenix[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* WoodlandPhoenix */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> WoodlandPhoenix</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.phoenix[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1254,11 +1228,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1266,11 +1240,11 @@ function PCGallery({color}) {
                     {List.proxy[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.proxy[skin.rar == "alienware" ? 8 : skin.rar == "humble" ? 9 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1279,66 +1253,66 @@ function PCGallery({color}) {
                     { /* CulpritObsidian */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/culpritobsidian.png`} className="mb-2" /> CulpritObsidian</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[10].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.proxy[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1348,11 +1322,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.redeye[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1360,11 +1334,11 @@ function PCGallery({color}) {
                     {List.redeye[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.redeye[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1373,22 +1347,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.redeye[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.redeye[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1398,11 +1372,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.rhino[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1410,11 +1384,11 @@ function PCGallery({color}) {
                     {List.rhino[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.rhino[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1423,22 +1397,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.rhino[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.rhino[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1448,11 +1422,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sawbonez[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1460,11 +1434,11 @@ function PCGallery({color}) {
                     {List.sawbonez[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.sawbonez[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1473,44 +1447,44 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sawbonez[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sawbonez[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sawbonez[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sawbonez[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1520,11 +1494,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.skyhammer[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1532,11 +1506,11 @@ function PCGallery({color}) {
                     {List.skyhammer[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.skyhammer[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1545,44 +1519,44 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.skyhammer[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.skyhammer[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.skyhammer[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.skyhammer[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1592,11 +1566,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sparks[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1604,11 +1578,11 @@ function PCGallery({color}) {
                     {List.sparks[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.sparks[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1617,22 +1591,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sparks[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.sparks[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1642,11 +1616,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.stoker[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1654,11 +1628,11 @@ function PCGallery({color}) {
                     {List.stoker[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.stoker[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1667,61 +1641,47 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.stoker[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.stoker[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.stoker[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
-                    { /* Additional for me */}
-                    {List.stoker[6].map((skin) => (
-                        <div className={`mt-4 d-${exp}`}>
-                            <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
-                                {List.stoker[0].map((weapon) => (
-                                    <div className="mb-4">
-                                        <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
                 </div>)
             case 221: { /* THUNDER */ }
                 return (<div>
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.thunder[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1729,11 +1689,11 @@ function PCGallery({color}) {
                     {List.thunder[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.thunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1742,22 +1702,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.thunder[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.thunder[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1767,11 +1727,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.turtle[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1779,11 +1739,11 @@ function PCGallery({color}) {
                     {List.turtle[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.turtle[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1792,11 +1752,11 @@ function PCGallery({color}) {
                     { /* Turtleneck */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsold.png`} className="mb-2" /> Turtleneck</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.turtle[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1806,11 +1766,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.vassili[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1818,11 +1778,11 @@ function PCGallery({color}) {
                     {List.vassili[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.vassili[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1831,44 +1791,44 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.vassili[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.vassili[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.vassili[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.vassili[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1878,77 +1838,77 @@ function PCGallery({color}) {
                 return List.alice.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 302: { /* Aquila */ }
                 return List.aquila.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 303: { /* BetaVeteran */ }
                 return List.betav.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 304: { /* Contraband */ }
                 return List.contraband.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${cb}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${cb}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 305: { /* CoreSec */ }
                 return List.coresec.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 306: { /* Faciet */ }
                 return List.faceit.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 307: { /* KMA */ }
                 return List.kma.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 308: { /* Nuclear Winter */ }
                 return List.nuclearwinter.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 309: { /* Ranked Season 4 */ }
                 return List.rankedseason4.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
             case 310: { /* RoyalForce */ }
                 return List.royalforce.map((weapon) => (
-                    <div className=" mt-4">
+                    <div className="mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow} w-100`} />
                     </div>
                 ))
             case 311: { /* Tapir */ }
                 return List.tapir.map((weapon) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                        <img src={`img/${colID}/${taprC}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/${colID}/${taprC}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
 
@@ -1960,11 +1920,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaimee[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -1972,11 +1932,11 @@ function PCGallery({color}) {
                     {List.fullaimee[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullaimee[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -1985,44 +1945,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaimee[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /*SplashDamage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaimee[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaimee[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaimee[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2030,11 +1990,11 @@ function PCGallery({color}) {
                     {List.fullaimee[7].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullaimee[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2045,11 +2005,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2057,11 +2017,11 @@ function PCGallery({color}) {
                     {List.fullarty[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullarty[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2070,55 +2030,55 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullarty[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2126,11 +2086,11 @@ function PCGallery({color}) {
                     {List.fullarty[10].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullarty[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2141,11 +2101,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2153,11 +2113,11 @@ function PCGallery({color}) {
                     {List.fullaura[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullaura[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2166,55 +2126,55 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullaura[10].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2222,11 +2182,11 @@ function PCGallery({color}) {
                     {List.fullaura[11].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullaura[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2237,11 +2197,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullbushwhacker[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2249,11 +2209,11 @@ function PCGallery({color}) {
                     {List.fullbushwhacker[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullbushwhacker[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2262,44 +2222,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullbushwhacker[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullbushwhacker[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullbushwhacker[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullbushwhacker[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2307,11 +2267,11 @@ function PCGallery({color}) {
                     {List.fullbushwhacker[9].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullbushwhacker[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2322,11 +2282,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfletcher[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2334,11 +2294,11 @@ function PCGallery({color}) {
                     {List.fullfletcher[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullfletcher[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2347,44 +2307,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfletcher[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfletcher[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfletcher[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfletcher[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2392,11 +2352,11 @@ function PCGallery({color}) {
                     {List.fullfletcher[9].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullfletcher[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2407,11 +2367,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2419,11 +2379,11 @@ function PCGallery({color}) {
                     {List.fullfragger[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullfragger[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2432,55 +2392,55 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullfragger[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2488,11 +2448,11 @@ function PCGallery({color}) {
                     {List.fullfragger[10].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullfragger[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2503,11 +2463,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullguardian[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2515,11 +2475,11 @@ function PCGallery({color}) {
                     {List.fullguardian[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullguardian[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2528,11 +2488,11 @@ function PCGallery({color}) {
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullguardian[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2540,11 +2500,11 @@ function PCGallery({color}) {
                     {List.fullguardian[4].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullguardian[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2555,11 +2515,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullhunter[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2567,11 +2527,11 @@ function PCGallery({color}) {
                     {List.fullhunter[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullhunter[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2579,22 +2539,22 @@ function PCGallery({color}) {
                     ))}
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/arctic.png`} className="mb-2" /> HunterSpecial</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullhunter[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Ranked Season 4 */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/rs4.png`} className="mb-2" /> Rnaked Season 4</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullhunter[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2602,11 +2562,11 @@ function PCGallery({color}) {
                     {List.fullhunter[5].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullhunter[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2617,11 +2577,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fulljavelin[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2629,35 +2589,35 @@ function PCGallery({color}) {
                     {List.fulljavelin[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fulljavelin[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
                         </div>
                     ))}
                     { /* SplashDmage */ }
-                    <div className="mt-4">
+                    {/*<div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage*</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fulljavelin[3].map((def) => (
                         <div className="mb-4" title={SDJavMsg}>
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
-                    </div></div>
+                    </div></div>*/}
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fulljavelin[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2665,11 +2625,11 @@ function PCGallery({color}) {
                     {List.fulljavelin[5].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fulljavelin[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2680,11 +2640,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullkira[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2692,11 +2652,11 @@ function PCGallery({color}) {
                     {List.fullkira[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullkira[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2705,33 +2665,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullkira[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullkira[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullkira[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2739,11 +2699,11 @@ function PCGallery({color}) {
                     {List.fullkira[8].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullkira[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2754,11 +2714,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullnader[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2766,11 +2726,11 @@ function PCGallery({color}) {
                     {List.fullnader[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullnader[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2779,44 +2739,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullnader[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullnader[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullnader[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullnader[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2824,11 +2784,11 @@ function PCGallery({color}) {
                     {List.fullnader[9].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullnader[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2839,11 +2799,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphantom[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2851,11 +2811,11 @@ function PCGallery({color}) {
                     {List.fullphantom[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullphantom[skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2864,44 +2824,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphantom[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphantom[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphantom[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphantom[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2909,11 +2869,11 @@ function PCGallery({color}) {
                     {List.fullphantom[8].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullphantom[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -2924,11 +2884,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -2936,11 +2896,11 @@ function PCGallery({color}) {
                     {List.fullphoenix[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullphoenix[skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -2949,55 +2909,55 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* WoodlandPhoenix */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> WoodlandPhoenix</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullphoenix[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3005,11 +2965,11 @@ function PCGallery({color}) {
                     {List.fullphoenix[9].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullphoenix[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3020,11 +2980,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3032,11 +2992,11 @@ function PCGallery({color}) {
                     {List.fullproxy[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullproxy[skin.rar == "alienware" ? 8 : skin.rar == "humble" ? 9 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3045,77 +3005,77 @@ function PCGallery({color}) {
                     { /* CulpritObsidian */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/culpritobsidian.png`} className="mb-2" /> CulpritObsidian</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[10].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullproxy[11].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3123,11 +3083,11 @@ function PCGallery({color}) {
                     {List.fullproxy[12].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullproxy[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3138,11 +3098,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullredeye[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3150,11 +3110,11 @@ function PCGallery({color}) {
                     {List.fullredeye[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullredeye[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3163,33 +3123,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullredeye[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullredeye[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullredeye[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3197,11 +3157,11 @@ function PCGallery({color}) {
                     {List.fullredeye[7].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullredeye[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3212,11 +3172,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullrhino[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3224,11 +3184,11 @@ function PCGallery({color}) {
                     {List.fullrhino[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullrhino[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3237,33 +3197,33 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullrhino[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullrhino[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullrhino[7].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3271,11 +3231,11 @@ function PCGallery({color}) {
                     {List.fullrhino[8].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullrhino[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3286,11 +3246,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3298,11 +3258,11 @@ function PCGallery({color}) {
                     {List.fullsawbonez[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullsawbonez[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3311,55 +3271,55 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsawbonez[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3367,11 +3327,11 @@ function PCGallery({color}) {
                     {List.fullsawbonez[10].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullsawbonez[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3382,11 +3342,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3394,11 +3354,11 @@ function PCGallery({color}) {
                     {List.fullskyhammer[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullskyhammer[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3407,55 +3367,55 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsnew.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullskyhammer[10].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3463,11 +3423,11 @@ function PCGallery({color}) {
                     {List.fullskyhammer[11].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullskyhammer[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3478,11 +3438,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsparks[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3490,11 +3450,11 @@ function PCGallery({color}) {
                     {List.fullsparks[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullsparks[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3503,22 +3463,22 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsparks[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullsparks[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3526,11 +3486,11 @@ function PCGallery({color}) {
                     {List.fullsparks[6].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullsparks[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3541,11 +3501,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullstoker[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3553,11 +3513,11 @@ function PCGallery({color}) {
                     {List.fullstoker[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullstoker[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3566,44 +3526,44 @@ function PCGallery({color}) {
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullstoker[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullstoker[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* TacticalBlack */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obs50.png`} className="mb-2" /> TacticalBlack</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullstoker[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullstoker[6].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3611,11 +3571,11 @@ function PCGallery({color}) {
                     {List.fullstoker[7].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullstoker[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3630,7 +3590,7 @@ function PCGallery({color}) {
                     {List.fullthunder[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3642,7 +3602,7 @@ function PCGallery({color}) {
                                 {List.fullthunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3655,7 +3615,7 @@ function PCGallery({color}) {
                     {List.fullthunder[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3666,7 +3626,7 @@ function PCGallery({color}) {
                     {List.fullthunder[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3677,7 +3637,7 @@ function PCGallery({color}) {
                     {List.fullthunder[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3689,7 +3649,7 @@ function PCGallery({color}) {
                                 {List.fullthunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3700,11 +3660,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullturtle[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3712,11 +3672,11 @@ function PCGallery({color}) {
                     {List.fullturtle[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullturtle[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3725,22 +3685,22 @@ function PCGallery({color}) {
                     { /* Turtleneck */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/obsold.png`} className="mb-2" /> Turtleneck</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullturtle[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullturtle[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3748,11 +3708,11 @@ function PCGallery({color}) {
                     {List.fullturtle[5].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullturtle[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3763,11 +3723,11 @@ function PCGallery({color}) {
                     { /* Default */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/default.png`} className="mb-2" /> Default</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[2].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3775,11 +3735,11 @@ function PCGallery({color}) {
                     {List.fullvassili[1].map((skin) => (
                         <div className="mt-4">
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullvassili[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                             </div>
@@ -3788,55 +3748,55 @@ function PCGallery({color}) {
                     { /* Founders */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/founders.png`} className="mb-2" /> Founders</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[5].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nexon */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nexon.png`} className="mb-2" /> Nexon</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[8].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* OutforBlood */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/outforblood.png`} className="mb-2" /> OutforBlood</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[3].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* SplashDmage */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[4].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
                     { /* Nuclear Winter */ }
                     <div className="mt-4">
                         <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/nw.png`} className="mb-2" /> Nuclear Winter</h2>
-                        <div className={`row row-cols-${grid[0]}`}>
+                        <div className={`row row-cols-${grid[0]} justify-content-around`}>
                     {List.fullvassili[9].map((def) => (
                         <div className="mb-4">
                             <p className={`h${grid[1]} text-${color[1]}`}>{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2 w-100`} />
                         </div>
                     ))}
                     </div></div>
@@ -3844,11 +3804,11 @@ function PCGallery({color}) {
                     {List.fullvassili[10].map((skin) => (
                         <div className={`mt-4`}>
                             <h2 className={`text-center text-${color[1]}`}><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                                 {List.fullvassili[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className={`h${grid[1]} text-${color[1]}`}>{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2 w-100`} />
                                     </div>
                                 ))}
                         </div></div>
@@ -3858,96 +3818,101 @@ function PCGallery({color}) {
     }
 
     return (
-        <div className={`p-4 bg-${color[2]} bg-gradient min-vh-100`}>
+        <div className={`jw p-4 bg-${color[2]} bg-gradient min-vh-100`}>
 
-            <h1 className={`m-auto w-75 p-4 bg-${color[0]} text-${color[1]} rounded shadow text-center`}>Weapon Finish Gallery</h1>
+            <div className={`alert - alert-${color[0]}`} role="alert">
+                I'm currently making a "Full Merc" Merc view. That means all the weapon screenshots are done with this merc's hands, not mixed like in "normal" Merc view. And I put there only new, refreshed screenshots.<br />I don't want to fully replace current Merc view with it yet, so it's hidden by default.<br />
+                If you want to check it out, simply click <span className="alert-link" onClick={() => setPubTest("block")}>here</span>.
+            </div>
 
-            <p className={`m-auto w-75 p-1 mt-4 bg-${color[0]} text-${color[1]} rounded shadow text-center d-${exp}`}><i>Experimental mode, some new features may not work, yet</i></p>
+            <h1 className={`m-auto w-100 p-4 bg-${color[0]} text-${color[1]} rounded shadow text-center`}>Weapon Finish Gallery</h1>
+
+            <p className={`m-auto w-100 p-1 mt-4 bg-${color[0]} text-${color[1]} rounded shadow text-center d-${exp}`}><i>Experimental mode, some new features may not work, yet</i></p>
 
             { /* Navbar */ }
 
-            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto w-75 rounded shadow m-auto justify-content-center`}>
+            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto w-100 rounded shadow m-auto justify-content-center`}>
 
                 { /* Back to start */ }
 
-                <Link to="/" className={`btn btn-${color[0]} border-2 border-${color[1]} text-${color[1]} me-3`}><i className="bi bi-arrow-return-left" /> Back to Start</Link>
+                <Link to="/" className={`btn btn-${color[0]} border-2 border-${color[1]} text-${color[1]} me-3 mt-1 mb-1`}><i className="bi bi-arrow-return-left" /> Back to Start</Link>
 
                 { /* Regular Edition */ }
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="nonSE" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Regular Edition
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="nonSE" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([19, "default", "Default", "default"]))}><img src="img/collection/default.png" /> Default</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "lead", "Lead", "lead"]))}><img src="img/collection/lead.png" /> Lead</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "iron", "Iron", "iron"]))}><img src="img/collection/iron.png" /> Iron</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "bronze", "Bronze", "bronze"]))}><img src="img/collection/bronze.png"/> Bronze</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "carbon", "Silver Carbon", "silver"]))}><img src="img/collection/silver.png" /> Silver Carbon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "urban", "Silver Urban", "silver"]))}><img src="img/collection/silver.png" /> Silver Urban</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "bamboo", "Gold Bamboo", "gold"]))}><img src="img/collection/gold.png" /> Gold Bamboo</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "crown", "Gold Crown", "gold"]))}><img src="img/collection/gold.png" /> Gold Crown</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "swiss", "Gold Swiss", "gold"]))}><img src="img/collection/gold.png" /> Gold Swiss</button>
-                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"])) : (setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"])))}><img src="img/collection/cobalt.png" /> Cobalt Fragment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "shard", "Cobalt Shard", "cobalt"]))}><img src="img/collection/cobalt.png" /> Cobalt Shard</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([19, "default", "Default", "default", "-def"]))}><img src="img/collection/default.png" /> Default</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "lead", "Lead", "lead", "-lead"]))}><img src="img/collection/lead.png" /> Lead</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "iron", "Iron", "iron", "-iron"]))}><img src="img/collection/iron.png" /> Iron</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "bronze", "Bronze", "bronze", "-bronze"]))}><img src="img/collection/bronze.png"/> Bronze</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "carbon", "Silver Carbon", "silver", "-silver"]))}><img src="img/collection/silver.png" /> Silver Carbon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "urban", "Silver Urban", "silver", "-silver"]))}><img src="img/collection/silver.png" /> Silver Urban</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "bamboo", "Gold Bamboo", "gold", "-gold"]))}><img src="img/collection/gold.png" /> Gold Bamboo</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "crown", "Gold Crown", "gold", "-gold"]))}><img src="img/collection/gold.png" /> Gold Crown</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "swiss", "Gold Swiss", "gold", "-gold"]))}><img src="img/collection/gold.png" /> Gold Swiss</button>
+                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"])) : (setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"])))}><img src="img/collection/cobalt.png" /> Cobalt Fragment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "shard", "Cobalt Shard", "cobalt", "-cobalt"]))}><img src="img/collection/cobalt.png" /> Cobalt Shard</button>
                     </div>
                 </div>
 
                 { /* Special Edition */}
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="SE" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Special Edition
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="SE" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([5, "alienware", "Alienware", "alienware"]))}><img src="img/collection/alienware.png"/> Alienware</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "containment", "Containment", "containment"]))}><img src="img/collection/containment.png" /> Containment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "culprit", "Culprit", "culprit"]))}><img src="img/collection/culprit.png" /> Culprit</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "cybereye", "CyberEye", "cybereye"]))}><img src="img/collection/cybereye.png" /> CyberEye</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([7, "detective", "Detective", "detective"]))}><img src="img/collection/detective.png" /> Detective</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([18, "faction", "Faction", "faction"]))}><img src="img/collection/faction.png" /> Faction</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "ghostclip", "Ghostclip", "ghostclip"]))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
-                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"])) : (setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"])))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "halloween17", "Halloween17", "halloween17"]))}><img src="img/collection/halloween17.png" /> Halloween17</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "hexagon", "Hexagon", "hexagon"]))}><img src="img/collection/hexagon.png" /> Hexagon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([11, "humble", "Humble", "humble"]))}><img src="img/collection/humble.png" /> Humble</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([9, "arctic", "HunterSpecial", "arctic"]))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([10, "javelin", "Javelin", "javelin"]))}><img src="img/collection/javelin.png" /> Javelin</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([12, "logitech", "Logitech", "logitech"]))}><img src="img/collection/logitech.png" /> Logitech</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked2", "RankedEagle", "ranked2"]))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "ranked4", "ScorchedMetal", "ranked4"]))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked3", "Shatter", "ranked3"]))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "suspect", "Suspect", "suspect"]))}><img src="img/collection/suspect.png" /> Suspect</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "twitch", "Twitch", "twitch"]))}><img src="img/collection/twitch.png" /> Twitch</button>
-                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"])) : (setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"])))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "xmas17", "Xmas2017", "xmas17"]))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([5, "alienware", "Alienware", "alienware", "-se"]))}><img src="img/collection/alienware.png"/> Alienware</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "containment", "Containment", "containment", "-se"]))}><img src="img/collection/containment.png" /> Containment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "culprit", "Culprit", "culprit", "-se"]))}><img src="img/collection/culprit.png" /> Culprit</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "cybereye", "CyberEye", "cybereye", "-se"]))}><img src="img/collection/cybereye.png" /> CyberEye</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([7, "detective", "Detective", "detective", "-se"]))}><img src="img/collection/detective.png" /> Detective</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([18, "faction", "Faction", "faction", "-se"]))}><img src="img/collection/faction.png" /> Faction</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "ghostclip", "Ghostclip", "ghostclip", "-se"]))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
+                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([8, "pirin", "GuardianSpecial", "pirin", "-se", "hqm"])) : (setStyle([8, "lpirin", "GuardianSpecial", "pirin", "-se", "hqm"])))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "halloween17", "Halloween17", "halloween17", "-se"]))}><img src="img/collection/halloween17.png" /> Halloween17</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "hexagon", "Hexagon", "hexagon", "-se"]))}><img src="img/collection/hexagon.png" /> Hexagon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([11, "humble", "Humble", "humble", "-se"]))}><img src="img/collection/humble.png" /> Humble</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([9, "arctic", "HunterSpecial", "arctic", "-se"]))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([10, "javelin", "Javelin", "javelin", "-se"]))}><img src="img/collection/javelin.png" /> Javelin</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([12, "logitech", "Logitech", "logitech", "-se"]))}><img src="img/collection/logitech.png" /> Logitech</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked2", "RankedEagle", "ranked2", "-se"]))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "ranked4", "ScorchedMetal", "ranked4", "-se"]))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked3", "Shatter", "ranked3", "-se"]))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "suspect", "Suspect", "suspect", "-se"]))}><img src="img/collection/suspect.png" /> Suspect</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "twitch", "Twitch", "twitch", "-se"]))}><img src="img/collection/twitch.png" /> Twitch</button>
+                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([1, "xmas15", "Xmas2015", "xmas15", "-se", "hqm"])) : (setStyle([1, "lxmas15", "Xmas2015", "xmas15", "-se", "hqm"])))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "xmas17", "Xmas2017", "xmas17", "-se"]))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
                     </div>
                 </div>
 
                 { /* Obsidian */}
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="Obs" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Obsidian
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="Obs" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "culpritobsidian", "CulpritObsidian", "culpritobsidian"]))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([13, "founders", "Founders", "founders"]))}><img src="img/collection/founders.png" /> Founders</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([20, "nexon", "Nexon", "nexon"]))}><img src="img/collection/nexon.png" /> Nexon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([14, "outforblood", "OutforBlood", "outforblood"]))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([21, "sd", "SplashDamage", "sd"]))}><img src="img/collection/sd.png" /> SplashDamage</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([15, "tacticalblack", "TacticalBlack", "obs50"]))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold"]))}><img src="img/collection/obsold.png" /> Turtleneck</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([17, "woodlandphoenix", "WoodlandPhoenix", "obs50"]))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "culpritobsidian", "CulpritObsidian", "culpritobsidian", "-obs"]))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([13, "founders", "Founders", "founders", "-obs"]))}><img src="img/collection/founders.png" /> Founders</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([20, "nexon", "Nexon", "nexon", "-obs"]))}><img src="img/collection/nexon.png" /> Nexon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([14, "outforblood", "OutforBlood", "outforblood", "-obs"]))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "sd", "SplashDamage", "sd", "-obs"]))}><img src="img/collection/sd.png" /> SplashDamage</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([15, "tacticalblack", "TacticalBlack", "obs50", "-obs"]))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold", "-obs"]))}><img src="img/collection/obsold.png" /> Turtleneck</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([17, "woodlandphoenix", "WoodlandPhoenix", "obs50", "-obs"]))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
                     </div>
                 </div>
 
                 {/* Weapon Cards */}
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle me-1`} type="button" id="wep" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Weapon Cards
                     </button>
@@ -3959,18 +3924,18 @@ function PCGallery({color}) {
                         <button className="dropdown-item" onClick={() => (setStyle([307, "kma", "KMA", "kma", "wear"]))}><img src="img/collection/kma.png" /> KMA</button>
                         <button className="dropdown-item" onClick={() => (setStyle([310, "royalforce", "RoyalForce", "royalforce", "wear"]))}><img src="img/collection/royalforce.png" /> RoyalForce</button>
                         <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([303, "betav", "BetaVeteran", "betav", "hqm"])) : (setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"])))}><img src="img/collection/betav.png" /> BetaVeteran</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([304, "contraband", "Contraband", "contraband", "contrab"]))}><img src="img/collection/contraband.png" /> Contraband</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([306, "faceit", "FACEIT", "faceit"]))}><img src="img/collection/faceit.png" /> FACEIT</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([308, "nuclearwinter", "Nuclear Winter", "nw"]))}><img src="img/collection/nw.png" /> Nuclear Winter</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([309, "rankedseason4", "Ranked Season 4", "rs4"]))}><img src="img/collection/rs4.png" /> Ranked Season 4</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([311, "tapir", "Tapir", "tapir", "tapr"]))}><img src="img/collection/tapir.png" /> Tapir</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "contraband", "Contraband", "contraband", "-se", "contrab"]))}><img src="img/collection/contraband.png" /> Contraband</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([306, "faceit", "FACEIT", "faceit", "-se"]))}><img src="img/collection/faceit.png" /> FACEIT</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([308, "nuclearwinter", "Nuclear Winter", "nw", "-se"]))}><img src="img/collection/nw.png" /> Nuclear Winter</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([309, "rankedseason4", "Ranked Season 4", "rs4", "-se"]))}><img src="img/collection/rs4.png" /> Ranked Season 4</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([311, "tapir", "Tapir", "tapir", "-se", "tapr"]))}><img src="img/collection/tapir.png" /> Tapir</button>
 
                     </div>
                 </div>
 
                 { /* Merc */ }
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="merc" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Mercs
                     </button>
@@ -3999,36 +3964,46 @@ function PCGallery({color}) {
                         <button className="dropdown-item" onClick={() => (setStyle([221, "thunder", "Thunder", "thunder"]))}><img src="img/merc/thunder.png" /> Thunder</button>
                         <button className="dropdown-item" onClick={() => (setStyle([222, "turtle", "Turtle", "turtle"]))}><img src="img/merc/turtle.png" /> Turtle</button>
                         <button className="dropdown-item" onClick={() => (setStyle([223, "vassili", "Vassili", "vassili"]))}><img src="img/merc/vassili.png" /> Vassili</button>
-                        <span className={`text-center d-${exp}`}>W.I.P FULL MERCS (Refreshed screenshots only)</span>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([224, "aimee", "Full Aimee", "aimee"]))}><img src="img/merc/aimee.png" /> Full Aimee</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([225, "arty", "Full Arty", "arty"]))}><img src="img/merc/arty.png" /> Full Arty</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([226, "aura", "Full Aura", "aura"]))}><img src="img/merc/aura.png" /> Full Aura</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([227, "bushwhacker", "Full Bushwhacker", "bushwhacker"]))}><img src="img/merc/bushwhacker.png" /> Full Bushwhacker</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([228, "fletcher", "Full Fletcher", "fletcher"]))}><img src="img/merc/fletcher.png" /> Full Fletcher</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([229, "fragger", "Full Fragger", "fragger"]))}><img src="img/merc/fragger.png" /> Full Fragger</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([230, "guardian", "Full Guardian", "guardian"]))}><img src="img/merc/guardian.png" /> Full Guardian</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([231, "hunter", "Full Hunter", "hunter"]))}><img src="img/merc/hunter.png" /> Full Hunter</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([232, "javelin", "Full Javelin", "javelin"]))}><img src="img/merc/javelin.png" /> Full Javelin</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([233, "kira", "Full Kira", "kira"]))}><img src="img/merc/kira.png" /> Full Kira</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([234, "nader", "Full Nader", "nader"]))}><img src="img/merc/nader.png" /> Full Nader</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([235, "phantom", "Full Phantom", "phantom"]))}><img src="img/merc/phantom.png" /> Full Phantom</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([236, "phoenix", "Full Phoenix", "phoenix"]))}><img src="img/merc/phoenix.png" /> Full Phoenix</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([237, "proxy", "Full Proxy", "proxy"]))}><img src="img/merc/proxy.png" /> Full Proxy</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([238, "redeye", "Full Redeye", "redeye"]))}><img src="img/merc/redeye.png" /> Full Redeye</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([239, "rhino", "Full Rhino", "rhino"]))}><img src="img/merc/rhino.png" /> Full Rhino</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([240, "sawbonez", "Full Sawbonez", "sawbonez"]))}><img src="img/merc/sawbonez.png" /> Full Sawbonez</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([241, "skyhammer", "Full Skyhammer", "skyhammer"]))}><img src="img/merc/skyhammer.png" /> Full Skyhammer</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([242, "sparks", "Full Sparks", "sparks"]))}><img src="img/merc/sparks.png" /> Full Sparks</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([243, "stoker", "Full Stoker", "stoker"]))}><img src="img/merc/stoker.png" /> Full Stoker</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([244, "thunder", "Full Thunder", "thunder"]))}><img src="img/merc/thunder.png" /> Full Thunder</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([245, "turtle", "Full Turtle", "turtle"]))}><img src="img/merc/turtle.png" /> Full Turtle</button>
-                        <button className={`dropdown-item d-${exp}`} onClick={() => (setStyle([246, "vassili", "Full Vassili", "vassili"]))}><img src="img/merc/vassili.png" /> Full Vassili</button>
+                    </div>
+                </div>
+
+                { /* Full Merc */ }
+
+                <div className={`dropdown me-2 mt-1 mb-1 d-${pubTest}`}>
+                    <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="fullMerc" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i>Full Mercs (WIP)</i>
+                    </button>
+
+                    <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="fillMerc" style={{maxHeight: '70vh'} }>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([224, "aimee", "Full Aimee", "aimee"]))}><img src="img/merc/aimee.png" /> Full Aimee</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([225, "arty", "Full Arty", "arty"]))}><img src="img/merc/arty.png" /> Full Arty</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([226, "aura", "Full Aura", "aura"]))}><img src="img/merc/aura.png" /> Full Aura</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([227, "bushwhacker", "Full Bushwhacker", "bushwhacker"]))}><img src="img/merc/bushwhacker.png" /> Full Bushwhacker</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([228, "fletcher", "Full Fletcher", "fletcher"]))}><img src="img/merc/fletcher.png" /> Full Fletcher</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([229, "fragger", "Full Fragger", "fragger"]))}><img src="img/merc/fragger.png" /> Full Fragger</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([230, "guardian", "Full Guardian", "guardian"]))}><img src="img/merc/guardian.png" /> Full Guardian</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([231, "hunter", "Full Hunter", "hunter"]))}><img src="img/merc/hunter.png" /> Full Hunter</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([232, "javelin", "Full Javelin", "javelin"]))}><img src="img/merc/javelin.png" /> Full Javelin</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([233, "kira", "Full Kira", "kira"]))}><img src="img/merc/kira.png" /> Full Kira</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([234, "nader", "Full Nader", "nader"]))}><img src="img/merc/nader.png" /> Full Nader</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([235, "phantom", "Full Phantom", "phantom"]))}><img src="img/merc/phantom.png" /> Full Phantom</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([236, "phoenix", "Full Phoenix", "phoenix"]))}><img src="img/merc/phoenix.png" /> Full Phoenix</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([237, "proxy", "Full Proxy", "proxy"]))}><img src="img/merc/proxy.png" /> Full Proxy</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([238, "redeye", "Full Redeye", "redeye"]))}><img src="img/merc/redeye.png" /> Full Redeye</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([239, "rhino", "Full Rhino", "rhino"]))}><img src="img/merc/rhino.png" /> Full Rhino</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([240, "sawbonez", "Full Sawbonez", "sawbonez"]))}><img src="img/merc/sawbonez.png" /> Full Sawbonez</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([241, "skyhammer", "Full Skyhammer", "skyhammer"]))}><img src="img/merc/skyhammer.png" /> Full Skyhammer</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([242, "sparks", "Full Sparks", "sparks"]))}><img src="img/merc/sparks.png" /> Full Sparks</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([243, "stoker", "Full Stoker", "stoker"]))}><img src="img/merc/stoker.png" /> Full Stoker</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([244, "thunder", "Full Thunder", "thunder"]))}><img src="img/merc/thunder.png" /> Full Thunder</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([245, "turtle", "Full Turtle", "turtle"]))}><img src="img/merc/turtle.png" /> Full Turtle</button>
+                        <button className={`dropdown-item`} onClick={() => (setStyle([246, "vassili", "Full Vassili", "vassili"]))}><img src="img/merc/vassili.png" /> Full Vassili</button>
                     </div>
                 </div>
 
                 { /* Weapon */ }
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-2 mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle me-2`} type="button" id="wep" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Weapons
                     </button>
@@ -4081,7 +4056,7 @@ function PCGallery({color}) {
 
                 { /* About */}
 
-                <Link to="/GAbout">
+                <Link to="/GAbout" className="mt-1 mb-1">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} me-3`}>
                         <i className="bi bi-info-circle" /> About
                     </button>
@@ -4089,7 +4064,7 @@ function PCGallery({color}) {
 
                 { /* Grid */}
 
-                <div className="btn-group">
+                <div className="btn-group  mt-1 mb-1">
                     <button className={`rounded-start btn border-${color[1]} btn-${color[0]} text-${color[1]} border-2`} onClick={() => grid[0] == 1 ? setGrid([3, 6]) : setGrid([1, 4])}>{grid[0] == 1 ? <i className="bi bi-view-list" /> : <i className="bi bi-grid-3x3-gap" />}</button>
                     <button className={`rounded-end btn border-${color[1]} btn-${color[0]} text-${color[1]} border-2 dropdown-toggle`} type="button" id="multigrid" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
@@ -4101,7 +4076,7 @@ function PCGallery({color}) {
 
                 { /* MORE */ }
 
-                <div className={`dropdown d-${exp}`}>
+                <div className={`dropdown d-${exp} mt-1 mb-1`}>
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} text-${color[1]} dropdown-toggle`} type="button" id="More" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         +
                     </button>
@@ -4113,15 +4088,15 @@ function PCGallery({color}) {
                     </div>
                 </div>
 
-                <div className={`mt-4 w-100 d-${style[4] ? "block" : "none"}`}>
+                <div className={`mt-4 w-100 d-${style[5] || style[4] == "hqm" || style[4] == "wear" || style[4] == "contrab" || style[4] == "tapr" ? "block" : "none"}`}>
 
                     { /* HQM */ }
 
-                    <div className={`ms-5 d-${style[4] == "hqm" ? "block" : "none"}`}>
+                    <div className={`ms-5 d-${style[5] == "hqm" || style[4] == "hqm" ? "block" : "none"}`}>
                         <b className={`text-${color[1]}`} title="High Quality Materials">HQM: </b>
                         <div className="btn-group">
-                            <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
-                            <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
+                            <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "-se", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "-se", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
+                            <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "-se", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "-se", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
                         </div>
                     </div>
 
@@ -4140,7 +4115,7 @@ function PCGallery({color}) {
 
                     { /* Contraband Suit */ }
 
-                    <div className={`ms-5 d-${exp} d-${style[4] == "contrab" ? "block" : "none"}`}>
+                    <div className={`ms-5 d-${exp} d-${style[5] == "contrab" ? "block" : "none"}`}>
                         <b className={`text-${color[1]}`}>SUIT: </b>
                         <div className="btn-group">
                             <button className={`rounded-start btn btn${cbBut[0]}-${color[1]} border-2`} onClick={() => (setCb(""), setCbBut(["", "-outline", "-outline"]))}>RankedEagle</button>
@@ -4151,7 +4126,7 @@ function PCGallery({color}) {
 
                     { /* Tapir Suit */ }
 
-                    <div className={`ms-5 d-${exp} d-${style[4] == "tapr" ? "block" : "none"}`}>
+                    <div className={`ms-5 d-${exp} d-${style[5] == "tapr" ? "block" : "none"}`}>
                         <b className={`text-${color[1]}`}>SUIT: </b>
                         <div className="btn-group">
                             <button className={`rounded-start btn btn${taprBut[0]}-${color[1]} border-2`} onClick={() => (setTaprC(""), setTaprBut(["", "-outline", "-outline"]))}>RankedEagle</button>
@@ -4164,10 +4139,10 @@ function PCGallery({color}) {
 
             </div>
 
-            <div className={`m-auto w-75 bg-${color[0]} shadow mt-4 justify-content-center rounded`}>
+            <div className={`m-auto w-100 bg-${color[0]} shadow mt-4 justify-content-center rounded`}>
                 <h2 className={`text-center pt-4 text-${color[1]}`}><img src={style[0] >= 200 && style[0] <= 246 ? `img/merc/${style[3]}.png` : style[0] >= 100 && style[0] <= 141 ? `img/weapon/${color[1]}/${style[3]}.png` : `img/collection/${style[3]}.png`} className="mb-2" /> { style[2] }</h2>
 
-                <div className={style[0] >= 200 && style[0] <= 246 || style[0] > 311 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]}`}>
+                <div className={style[0] >= 200 && style[0] <= 246 || style[0] > 311 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]} justify-content-around`}>
                     {renderWepImgs(style[0], style[1], style[2])}
                 </div>
                 <button onClick={() => exp == "none" ? setExp("block") : setExp("none")} className={exp == "none" ? `border-0 bg-${color[0]}` : `border-2 bg-${color[0]} border-${color[1]} text-${color[1]}`}>{exp == "none" ? "" : "EXP ON"}</button>

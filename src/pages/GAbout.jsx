@@ -13,16 +13,16 @@ function GAbout() {
     return (
         <div className={`${isMobileDevice ? "pb-1" : "p-4"} bg-${color[2]} bg-gradient min-vh-100`}>
 
-            <h1 className={`m-auto p-4 bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-75'} p-3 bg-${color[0]} rounded shadow text-center`}>About Weapon Finish Gallery</h1>
+            <h1 className={`m-auto p-4 bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-100'} p-3 bg-${color[0]} rounded shadow text-center`}>About Weapon Finish Gallery</h1>
 
-            <div className={`mt-4 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-75'} p-3 bg-${color[0]} rounded shadow m-auto justify-content-center`}>
+            <div className={`mt-4 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-100'} p-3 bg-${color[0]} rounded shadow m-auto justify-content-center`}>
 
                 <Link to="/Gallery" className={`btn btn-${color[0]} bg-${color[0]} border-2 border-${color[1]} m-1`}><i className="bi bi-arrow-return-left" /> Back to the Gallery</Link>
                 <Link to="/Changelog" className={`btn btn-${color[0]} bg-${color[0]} border-2 border-${color[1]} m-1`}>WFG Changelog</Link>
 
             </div>
 
-            <div className={`m-auto ${isMobileDevice ? '' : 'w-75'} mt-4 p-4 bg-${color[0]} text-${color[1]} rounded shadow`}>
+            <div className={`m-auto ${isMobileDevice ? '' : 'w-100'} mt-4 p-4 bg-${color[0]} text-${color[1]} rounded shadow`}>
 
                 <h2>First of all - special thanks</h2>
                 <p><b>Special thanks to all my friends and other people who got involved in creation of this project for your help</b></p>

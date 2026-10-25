@@ -1,4 +1,5 @@
 import './../App.css';
+import './../stylejw.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
@@ -11,7 +12,7 @@ function MOBGallery({color}) {
     console.log(navigator.userAgent);
     var noImg = "img/noimg.png";
     var [ham, setHam] = useState(["none"]);
-    var [style, setStyle] = useState([19, "default", "Default", "default"]);
+    var [style, setStyle] = useState([19, "default", "Default", "default", "-def"]);
     var [exp, setExp] = useState(["none"]);
     var [hqm, setHqm] = useState(["true", "", "-outline"]);
     var [wearBut, setWearBut] = useState(["", "-outline", "-outline", "-outline", "-outline"])
@@ -23,147 +24,147 @@ function MOBGallery({color}) {
                 return List.ListClassic.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 2:
                 return List.ListAddJav.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 3:
                 return List.ListAddGrd.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 4:
                 return List.ListAddHntr.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 5:
                 return List.ListAlien.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 6:
                 return List.ListProx.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 7:
                 return List.ListAimee.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 8:
                 return List.ListGrd.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 9:
                 return List.ListHntr.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 10:
                 return List.ListJav.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 11:
                 return List.ListHumb.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 12:
                 return List.ListLog.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 13:
                 return List.ListFounders.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 14:
                 return List.ListBlood.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 15:
                 return List.ListTacticalB.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 16:
                 return List.ListTurtle.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 17:
                 return List.ListPhoenix.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 18:
                 return List.ListFaction.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 19:
                 return List.ListAll.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 20:
                 return List.ListNexon.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 21:
                 return List.ListSpecialSD.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                         <span className={`m-4 d-${weapon.fileName == "tolen.jpg" ? "block" : "none"}`}>
                             *Existence of this particular weapon skin IS NOT officially confirmed.<br />
                             One of the devs was spotted with it in game.<br />
@@ -177,294 +178,294 @@ function MOBGallery({color}) {
                 return List.wepA.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/ahnuhld.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/ahnuhld.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 102: { /* AREVAROV 9 */ }
                 return List.wep11.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/arevarov.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/arevarov.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 103: { /* BLISHLOK */ }
                 return List.wepBL.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/blishlok.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/blishlok.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 104: { /* BR-16 */ }
                 return List.wepB.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/br.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/br.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 105: { /* CAULDEN */ }
                 return List.wep7.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/caulden.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/caulden.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 106: { /* CROTZNI */ }
                 return List.wepCR.map((skin) => ( 
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/crotzni.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/crotzni.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 107: { /* DE .50 */ }
                 return List.wep5.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/de.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/de.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 108: { /* DREISS AR */ }
                 return List.wepD.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/dreiss.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/dreiss.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 109: { /* EMPIRE-9 */ }
                 return List.wep3.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/empire.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/empire.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 110: { /* FEL-IX */ }
                 return List.wepF.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/felix.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/felix.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 111: { /* GRANDEUR SR */ }
                 return List.wepG.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/grandeur.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/grandeur.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 112: { /* HOCHFIR SMG */ }
                 return List.wepKE.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hochfir.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/hochfir.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 113: { /* HOIGAT .224 */ }
                 return List.wep10.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hoigat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/hoigat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 114: { /* HOLLUNDS 880 */ }
                 return List.wepH.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hollunds.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/hollunds.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 115: { /* HURTSALL 2K */ }
                 return List.wepHU.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/hurtsall.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/hurtsall.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 116: { /* K-121 */ }
                 return List.wepK.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/k121.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/k121.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 117: { /* KEK-10 */ }
                 return List.wepC.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/kek.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/kek.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 118: { /* M4A1 */ }
                 return List.wepM.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/m4a1.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/m4a1.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 119: { /* M9 */ }
                 return List.wep4.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/m9.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/m9.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 120: { /* MK46 */ }
                 return List.wepMA.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/mk46.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/mk46.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 121: { /* MOA SNPR-1 */ }
                 return List.wepMO.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/moa.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/moa.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 122: { /* MP400 */ }
                 return List.wep1.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/mp400.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/mp400.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 123: { /* PDP-70 */ }
                 return List.wepP.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/pdp.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/pdp.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 124: { /* REMBURG-7 */ }
                 return List.wepR.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/remburg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/remburg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 125: { /* RYBURN */ }
                 return List.wep4r.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/ryburn.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/ryburn.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 126: { /* SELBSTADT .40 */ }
                 return List.wep8.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/selbstadt.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/selbstadt.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 127: { /* SHAR-C */ }
                 return List.wepSH.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/shar.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
-                        <span className={`m-4 d-${skin.fileName == "rankedseason4" ? "block" : "none"}`}>
+                        <img src={`img/${skin.fileName}/shar.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
+                        {/*<span className={`m-4 d-${skin.fileName == "rankedseason4" ? "block" : "none"}`}>
                             *Existence of this particular weapon skin IS NOT officially confirmed.<br />
                             One of the devs was spotted with it in game.<br />
                             Also it's not possible to trade for this card so please, DON'T CONTACT<br />
                             Splash Damage devs for additional info or in order to buy/obtain it.<br /><br />
                             Screenshot done on old version of DB and skin's displayed thanks to currently patched bugs
-                        </span>
+                        </span>*/}
                     </div>
                 ))
             case 128: { /* SIMEON .357 */ }
                 return List.wep6.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/simeon.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/simeon.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 129: { /* SMG-9 */ }
                 return List.wepSM.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/smg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/smg.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 130: { /* SMJÜTH & WHETSMAN .40 */ }
                 return List.wep9.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/sw.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/sw.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 131: { /* STARK AR */ }
                 return List.wepS.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/stark.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/stark.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 132: { /* TIMIK-47 */ }
                 return List.wepT.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/timik.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/timik.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 133: { /* TØLEN MP */ }
                 return List.wep2.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}/tolen.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}/tolen.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 134: { /* BECKHILL COMBAT KNIFE */ }
                 return List.melee1.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}beckhill.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}beckhill.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 135: { /* STILNOTTO STILETTO */ }
                 return List.melee2.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}stiletto.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}stiletto.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 136: { /* CRICKET BAT */ }
                 return List.melee3.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}bat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}bat.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 137: { /* KATANA */ }
                 return List.melee4.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}katana.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}katana.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 138: { /* KUKRI */ }
                 return List.melee5.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}kukri.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}kukri.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 139: { /* TACTICAL BATTLE AXE */ }
                 return List.melee6a.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}tomahawk.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}tomahawk.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 140: { /* BATONS */ }
                 return List.melee6b.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}batons.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}batons.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 141: { /* ULU */ }
                 return List.melee7.map((skin) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${skin.rar}.png`} /> {skin.colName}</p>
-                        <img src={`img/${skin.fileName}ulu.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className="img-fluid rounded shadow" />
+                        <img src={`img/${skin.fileName}ulu.jpg` || noImg} alt={`${skin.alt} ${col}`} onError={(e) => (e.target.src = noImg)} className={`img-fluid rounded shadow${skin.shadow}`} />
                     </div>
                 ))
             case 201: { /* AIMEE */ }
@@ -477,7 +478,7 @@ function MOBGallery({color}) {
                     {List.aimee[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow mb-2`} />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -489,7 +490,7 @@ function MOBGallery({color}) {
                                 {List.aimee[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -502,7 +503,7 @@ function MOBGallery({color}) {
                     {List.aimee[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -513,7 +514,7 @@ function MOBGallery({color}) {
                     {List.aimee[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -524,7 +525,7 @@ function MOBGallery({color}) {
                         {List.aimee[4].map((def) => (
                             <div className="mb-4">
                                 <p className="h6">{def.wepName}</p>
-                                <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                             </div>
                     ))}
                     </div></div>
@@ -538,7 +539,7 @@ function MOBGallery({color}) {
                     {List.arty[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -550,7 +551,7 @@ function MOBGallery({color}) {
                                 {List.arty[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -563,7 +564,7 @@ function MOBGallery({color}) {
                     {List.arty[8].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -574,7 +575,7 @@ function MOBGallery({color}) {
                     {List.arty[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -585,7 +586,7 @@ function MOBGallery({color}) {
                     {List.arty[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -596,7 +597,7 @@ function MOBGallery({color}) {
                     {List.arty[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -610,7 +611,7 @@ function MOBGallery({color}) {
                     {List.aura[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -622,7 +623,7 @@ function MOBGallery({color}) {
                                 {List.aura[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -635,7 +636,7 @@ function MOBGallery({color}) {
                     {List.aura[9].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -646,7 +647,7 @@ function MOBGallery({color}) {
                     {List.aura[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -657,7 +658,7 @@ function MOBGallery({color}) {
                     {List.aura[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -668,7 +669,7 @@ function MOBGallery({color}) {
                     {List.aura[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -682,7 +683,7 @@ function MOBGallery({color}) {
                     {List.bushwhacker[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -694,7 +695,7 @@ function MOBGallery({color}) {
                                 {List.bushwhacker[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -707,7 +708,7 @@ function MOBGallery({color}) {
                     {List.bushwhacker[7].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -718,7 +719,7 @@ function MOBGallery({color}) {
                     {List.bushwhacker[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -729,7 +730,7 @@ function MOBGallery({color}) {
                     {List.bushwhacker[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -743,7 +744,7 @@ function MOBGallery({color}) {
                     {List.fletcher[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -755,7 +756,7 @@ function MOBGallery({color}) {
                                 {List.fletcher[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -768,7 +769,7 @@ function MOBGallery({color}) {
                     {List.fletcher[7].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -779,7 +780,7 @@ function MOBGallery({color}) {
                     {List.fletcher[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -790,7 +791,7 @@ function MOBGallery({color}) {
                     {List.fletcher[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -804,7 +805,7 @@ function MOBGallery({color}) {
                     {List.fragger[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -816,7 +817,7 @@ function MOBGallery({color}) {
                                 {List.fragger[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -829,7 +830,7 @@ function MOBGallery({color}) {
                     {List.fragger[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -840,7 +841,7 @@ function MOBGallery({color}) {
                     {List.fragger[8].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -851,7 +852,7 @@ function MOBGallery({color}) {
                     {List.fragger[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -862,7 +863,7 @@ function MOBGallery({color}) {
                     {List.fragger[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -876,7 +877,7 @@ function MOBGallery({color}) {
                     {List.guardian[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -888,26 +889,26 @@ function MOBGallery({color}) {
                                 {List.guardian[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
                         </div>
                     ))}
                     { /* Additional for me */ }
-                    {List.guardian[3].map((skin) => (
+                    {/* {List.guardian[3].map((skin) => (
                         <div className={`mt-4 d-${exp}`}>
                             <h2 className="text-center"><img src={`img/collection/${skin.rar}.png`} className="mb-2" /> { skin.colName }</h2>
                             <div>
                                 {List.guardian[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>)
             case 208: { /* HUNTER */ }
                 return (<div>
@@ -918,7 +919,7 @@ function MOBGallery({color}) {
                     {List.hunter[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -930,7 +931,7 @@ function MOBGallery({color}) {
                                 {List.hunter[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -942,7 +943,7 @@ function MOBGallery({color}) {
                     {List.hunter[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -956,7 +957,7 @@ function MOBGallery({color}) {
                     {List.javelin[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -968,20 +969,20 @@ function MOBGallery({color}) {
                                 {List.javelin[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
                         </div>
                     ))}
                     { /* SplashDmage */ }
-                    <div className="mt-4">
+                    {/*<div className="mt-4">
                         <h2 className="text-center"><img src={`img/collection/sd.png`} className="mb-2" /> SplashDamage*</h2>
                         <div>
                     {List.javelin[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     <span>
@@ -991,7 +992,7 @@ function MOBGallery({color}) {
                         Splash Damage devs for additional info or in order to buy/obtain it.<br /><br />
                         Screenshots done on old version of DB and skins are displayed thanks to currently patched bugs
                     </span>
-                    </div></div>
+                    </div></div>*/}
                 </div>)
             case 210: { /* KIRA */ }
                 return (<div>
@@ -1002,7 +1003,7 @@ function MOBGallery({color}) {
                     {List.kira[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1014,7 +1015,7 @@ function MOBGallery({color}) {
                                 {List.kira[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1027,7 +1028,7 @@ function MOBGallery({color}) {
                     {List.kira[6].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1038,7 +1039,7 @@ function MOBGallery({color}) {
                     {List.kira[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1052,7 +1053,7 @@ function MOBGallery({color}) {
                     {List.nader[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1064,7 +1065,7 @@ function MOBGallery({color}) {
                                 {List.nader[skin.rar == "alienware" ? 5 : skin.rar == "humble" ? 6 : 0].map((weapon) => (                                    
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1077,7 +1078,7 @@ function MOBGallery({color}) {
                     {List.nader[7].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1088,7 +1089,7 @@ function MOBGallery({color}) {
                     {List.nader[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1099,7 +1100,7 @@ function MOBGallery({color}) {
                     {List.nader[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1113,7 +1114,7 @@ function MOBGallery({color}) {
                     {List.phantom[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1125,7 +1126,7 @@ function MOBGallery({color}) {
                                 {List.phantom[skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1138,7 +1139,7 @@ function MOBGallery({color}) {
                     {List.phantom[6].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1149,7 +1150,7 @@ function MOBGallery({color}) {
                     {List.phantom[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1160,7 +1161,7 @@ function MOBGallery({color}) {
                     {List.phantom[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1174,7 +1175,7 @@ function MOBGallery({color}) {
                     {List.phoenix[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1186,7 +1187,7 @@ function MOBGallery({color}) {
                                 {List.phoenix[skin.rar == "humble" ? 6 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1199,7 +1200,7 @@ function MOBGallery({color}) {
                     {List.phoenix[7].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1210,7 +1211,7 @@ function MOBGallery({color}) {
                     {List.phoenix[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1221,7 +1222,7 @@ function MOBGallery({color}) {
                     {List.phoenix[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1232,7 +1233,7 @@ function MOBGallery({color}) {
                     {List.phoenix[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1246,7 +1247,7 @@ function MOBGallery({color}) {
                     {List.proxy[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1258,7 +1259,7 @@ function MOBGallery({color}) {
                                 {List.proxy[skin.rar == "alienware" ? 8 : skin.rar == "humble" ? 9 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1271,7 +1272,7 @@ function MOBGallery({color}) {
                     {List.proxy[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1282,7 +1283,7 @@ function MOBGallery({color}) {
                     {List.proxy[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1293,7 +1294,7 @@ function MOBGallery({color}) {
                     {List.proxy[10].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1304,7 +1305,7 @@ function MOBGallery({color}) {
                     {List.proxy[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1315,7 +1316,7 @@ function MOBGallery({color}) {
                     {List.proxy[6].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1326,7 +1327,7 @@ function MOBGallery({color}) {
                     {List.proxy[7].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1340,7 +1341,7 @@ function MOBGallery({color}) {
                     {List.redeye[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1352,7 +1353,7 @@ function MOBGallery({color}) {
                                 {List.redeye[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1365,7 +1366,7 @@ function MOBGallery({color}) {
                     {List.redeye[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1376,7 +1377,7 @@ function MOBGallery({color}) {
                     {List.redeye[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1390,7 +1391,7 @@ function MOBGallery({color}) {
                     {List.rhino[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1402,7 +1403,7 @@ function MOBGallery({color}) {
                                 {List.rhino[skin.rar == "alienware" ? 4 : skin.rar == "humble" ? 5 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1415,7 +1416,7 @@ function MOBGallery({color}) {
                     {List.rhino[6].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1426,7 +1427,7 @@ function MOBGallery({color}) {
                     {List.rhino[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1440,7 +1441,7 @@ function MOBGallery({color}) {
                     {List.sawbonez[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1452,7 +1453,7 @@ function MOBGallery({color}) {
                                 {List.sawbonez[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1465,7 +1466,7 @@ function MOBGallery({color}) {
                     {List.sawbonez[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1476,7 +1477,7 @@ function MOBGallery({color}) {
                     {List.sawbonez[8].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1487,7 +1488,7 @@ function MOBGallery({color}) {
                     {List.sawbonez[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1498,7 +1499,7 @@ function MOBGallery({color}) {
                     {List.sawbonez[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1512,7 +1513,7 @@ function MOBGallery({color}) {
                     {List.skyhammer[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1524,7 +1525,7 @@ function MOBGallery({color}) {
                                 {List.skyhammer[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : skin.rar == "logitech" ? 8 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1537,7 +1538,7 @@ function MOBGallery({color}) {
                     {List.skyhammer[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1548,7 +1549,7 @@ function MOBGallery({color}) {
                     {List.skyhammer[9].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1559,7 +1560,7 @@ function MOBGallery({color}) {
                     {List.skyhammer[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1570,7 +1571,7 @@ function MOBGallery({color}) {
                     {List.skyhammer[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1584,7 +1585,7 @@ function MOBGallery({color}) {
                     {List.sparks[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1596,7 +1597,7 @@ function MOBGallery({color}) {
                                 {List.sparks[skin.rar == "humble" ? 4 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1609,7 +1610,7 @@ function MOBGallery({color}) {
                     {List.sparks[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1620,7 +1621,7 @@ function MOBGallery({color}) {
                     {List.sparks[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1634,7 +1635,7 @@ function MOBGallery({color}) {
                     {List.stoker[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1646,7 +1647,7 @@ function MOBGallery({color}) {
                                 {List.stoker[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1659,7 +1660,7 @@ function MOBGallery({color}) {
                     {List.stoker[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1670,7 +1671,7 @@ function MOBGallery({color}) {
                     {List.stoker[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1681,7 +1682,7 @@ function MOBGallery({color}) {
                     {List.stoker[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1695,7 +1696,7 @@ function MOBGallery({color}) {
                     {List.thunder[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1707,7 +1708,7 @@ function MOBGallery({color}) {
                                 {List.thunder[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1720,7 +1721,7 @@ function MOBGallery({color}) {
                     {List.thunder[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1731,7 +1732,7 @@ function MOBGallery({color}) {
                     {List.thunder[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1745,7 +1746,7 @@ function MOBGallery({color}) {
                     {List.turtle[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1757,7 +1758,7 @@ function MOBGallery({color}) {
                                 {List.turtle[0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1770,7 +1771,7 @@ function MOBGallery({color}) {
                     {List.turtle[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1784,7 +1785,7 @@ function MOBGallery({color}) {
                     {List.vassili[2].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1796,7 +1797,7 @@ function MOBGallery({color}) {
                                 {List.vassili[skin.rar == "alienware" ? 6 : skin.rar == "humble" ? 7 : 0].map((weapon) => (
                                     <div className="mb-4">
                                         <p className="h6">{weapon.wepName}</p>
-                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2 w-100" />
+                                        <img src={`img/${skin.fileName}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${skin.shadow} mb-2`} />
                                     </div>
                                 ))}
                             </div>
@@ -1809,7 +1810,7 @@ function MOBGallery({color}) {
                     {List.vassili[5].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1820,7 +1821,7 @@ function MOBGallery({color}) {
                     {List.vassili[8].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1831,7 +1832,7 @@ function MOBGallery({color}) {
                     {List.vassili[3].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1842,7 +1843,7 @@ function MOBGallery({color}) {
                     {List.vassili[4].map((def) => (
                         <div className="mb-4">
                             <p className="h6">{def.wepName}</p>
-                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow mb-2" />
+                            <img src={`img/${def.colFileName}/${def.wepFileName}` || noImg} alt={`${col} ${def.wepAlt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${def.shadow} mb-2`} />
                         </div>
                     ))}
                     </div></div>
@@ -1851,84 +1852,84 @@ function MOBGallery({color}) {
                 return List.alice.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 302:
                 return List.aquila.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 303:
                 return List.betav.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 304:
                 return List.contraband.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 305:
                 return List.coresec.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 306:
                 return List.faceit.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 307:
                 return List.kma.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 308:
                 return List.nuclearwinter.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 309:
                 return List.rankedseason4.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             case 310:
                 return List.royalforce.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6"><img src={`img/collection/${weapon.rar}.png`} /> {weapon.wepName}</p>
-                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${wear}${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${weapon.shadow}`} />
                     </div>
                 ))
             case 311:
                 return List.tapir.map((weapon) => (
                     <div className=" mt-4">
                         <p className="h6">{weapon.wepName}</p>
-                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow" />
+                        <img src={`img/${colID}/${weapon.fileName}` || noImg} alt={`${col} ${weapon.alt}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]}`} />
                     </div>
                 ))
             }
     }
 
     return (
-        <div className={`pb-1 min-vh-100 bg-${color[2]} bg-gradient`}>
+        <div className={`jw pb-1 min-vh-100 bg-${color[2]} bg-gradient`}>
 
             <h1 className={`p-4 bg-${color[0]} text-${color[1]} rounded shadow text-center`}>Weapon Finish Gallery</h1>
 
@@ -1955,17 +1956,17 @@ function MOBGallery({color}) {
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="nonSE" style={{ maxHeight: '45vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([19, "default", "Default", "default"]), (setHam("none")))}><img src="img/collection/default.png" /> Default</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "lead", "Lead", "lead"]), (setHam("none")))}><img src="img/collection/lead.png" /> Lead</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "iron", "Iron", "iron"]), (setHam("none")))}><img src="img/collection/iron.png" /> Iron</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "bronze", "Bronze", "bronze"]), (setHam("none")))}><img src="img/collection/bronze.png"/> Bronze</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "carbon", "Silver Carbon", "silver"]), (setHam("none")))}><img src="img/collection/silver.png" /> Silver Carbon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "urban", "Silver Urban", "silver"]), (setHam("none")))}><img src="img/collection/silver.png" /> Silver Urban</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "bamboo", "Gold Bamboo", "gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Bamboo</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "crown", "Gold Crown", "gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Crown</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "swiss", "Gold Swiss", "gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Swiss</button>
-                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]), (setHam("none"))) : (setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]), (setHam("none"))))}><img src="img/collection/cobalt.png" /> Cobalt Fragment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([4, "shard", "Cobalt Shard", "cobalt"]), (setHam("none")))}><img src="img/collection/cobalt.png" /> Cobalt Shard</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([19, "default", "Default", "default", "-def"]), (setHam("none")))}><img src="img/collection/default.png" /> Default</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "lead", "Lead", "lead", "-lead"]), (setHam("none")))}><img src="img/collection/lead.png" /> Lead</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "iron", "Iron", "iron", "-iron"]), (setHam("none")))}><img src="img/collection/iron.png" /> Iron</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "bronze", "Bronze", "bronze", "-bronze"]), (setHam("none")))}><img src="img/collection/bronze.png"/> Bronze</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "carbon", "Silver Carbon", "silver", "-silver"]), (setHam("none")))}><img src="img/collection/silver.png" /> Silver Carbon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "urban", "Silver Urban", "silver", "-silver"]), (setHam("none")))}><img src="img/collection/silver.png" /> Silver Urban</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "bamboo", "Gold Bamboo", "gold", "-gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Bamboo</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "crown", "Gold Crown", "gold", "-gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Crown</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "swiss", "Gold Swiss", "gold", "-gold"]), (setHam("none")))}><img src="img/collection/gold.png" /> Gold Swiss</button>
+                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? (setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]), (setHam("none"))) : (setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]), (setHam("none"))))}><img src="img/collection/cobalt.png" /> Cobalt Fragment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([4, "shard", "Cobalt Shard", "cobalt", "-cobalt"]), (setHam("none")))}><img src="img/collection/cobalt.png" /> Cobalt Shard</button>
                     </div>
                 </div>
 
@@ -1977,27 +1978,27 @@ function MOBGallery({color}) {
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="SE" style={{ maxHeight: '45vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([5, "alienware", "Alienware", "alienware"]), (setHam("none")))}><img src="img/collection/alienware.png"/> Alienware</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "containment", "Containment", "containment"]), (setHam("none")))}><img src="img/collection/containment.png" /> Containment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "culprit", "Culprit", "culprit"]), (setHam("none")))}><img src="img/collection/culprit.png" /> Culprit</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "cybereye", "CyberEye", "cybereye"]), (setHam("none")))}><img src="img/collection/cybereye.png" /> CyberEye</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([7, "detective", "Detective", "detective"]), (setHam("none")))}><img src="img/collection/detective.png" /> Detective</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([18, "faction", "Faction", "faction"]), (setHam("none")))}><img src="img/collection/faction.png" /> Faction</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "ghostclip", "Ghostclip", "ghostclip"]), (setHam("none")))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
-                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? ((setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"])), (setHam("none"))) : ((setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"])), (setHam("none"))))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "halloween17", "Halloween17", "halloween17"]), (setHam("none")))}><img src="img/collection/halloween17.png" /> Halloween17</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "hexagon", "Hexagon", "hexagon"]), (setHam("none")))}><img src="img/collection/hexagon.png" /> Hexagon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([11, "humble", "Humble", "humble"]), (setHam("none")))}><img src="img/collection/humble.png" /> Humble</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([9, "arctic", "HunterSpecial", "arctic"]), (setHam("none")))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([10, "javelin", "Javelin", "javelin"]), (setHam("none")))}><img src="img/collection/javelin.png" /> Javelin</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([12, "logitech", "Logitech", "logitech"]), (setHam("none")))}><img src="img/collection/logitech.png" /> Logitech</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked2", "RankedEagle", "ranked2"]), (setHam("none")))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "ranked4", "ScorchedMetal", "ranked4"]), (setHam("none")))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked3", "Shatter", "ranked3"]), (setHam("none")))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "suspect", "Suspect", "suspect"]), (setHam("none")))}><img src="img/collection/suspect.png" /> Suspect</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "twitch", "Twitch", "twitch"]), (setHam("none")))}><img src="img/collection/twitch.png" /> Twitch</button>
-                        <button className="dropdown-item" onClick={() => ((hqm[0] == "true" ? (setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"]), (setHam("none"))) : (setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"])), (setHam("none"))))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "xmas17", "Xmas2017", "xmas17"]), (setHam("none")))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([5, "alienware", "Alienware", "alienware", "-se"]), (setHam("none")))}><img src="img/collection/alienware.png"/> Alienware</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "containment", "Containment", "containment", "-se"]), (setHam("none")))}><img src="img/collection/containment.png" /> Containment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "culprit", "Culprit", "culprit", "-se"]), (setHam("none")))}><img src="img/collection/culprit.png" /> Culprit</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "cybereye", "CyberEye", "cybereye", "-se"]), (setHam("none")))}><img src="img/collection/cybereye.png" /> CyberEye</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([7, "detective", "Detective", "detective", "-se"]), (setHam("none")))}><img src="img/collection/detective.png" /> Detective</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([18, "faction", "Faction", "faction", "-se"]), (setHam("none")))}><img src="img/collection/faction.png" /> Faction</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "ghostclip", "Ghostclip", "ghostclip", "-se"]), (setHam("none")))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
+                        <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? ((setStyle([8, "pirin", "GuardianSpecial", "pirin", "-se", "hqm"])), (setHam("none"))) : ((setStyle([8, "lpirin", "GuardianSpecial", "pirin", "-se", "hqm"])), (setHam("none"))))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "halloween17", "Halloween17", "halloween17", "-se"]), (setHam("none")))}><img src="img/collection/halloween17.png" /> Halloween17</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "hexagon", "Hexagon", "hexagon", "-se"]), (setHam("none")))}><img src="img/collection/hexagon.png" /> Hexagon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([11, "humble", "Humble", "humble", "-se"]), (setHam("none")))}><img src="img/collection/humble.png" /> Humble</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([9, "arctic", "HunterSpecial", "arctic", "-se"]), (setHam("none")))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([10, "javelin", "Javelin", "javelin", "-se"]), (setHam("none")))}><img src="img/collection/javelin.png" /> Javelin</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([12, "logitech", "Logitech", "logitech", "-se"]), (setHam("none")))}><img src="img/collection/logitech.png" /> Logitech</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked2", "RankedEagle", "ranked2", "-se"]), (setHam("none")))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "ranked4", "ScorchedMetal", "ranked4", "-se"]), (setHam("none")))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "ranked3", "Shatter", "ranked3", "-se"]), (setHam("none")))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "suspect", "Suspect", "suspect", "-se"]), (setHam("none")))}><img src="img/collection/suspect.png" /> Suspect</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "twitch", "Twitch", "twitch", "-se"]), (setHam("none")))}><img src="img/collection/twitch.png" /> Twitch</button>
+                        <button className="dropdown-item" onClick={() => ((hqm[0] == "true" ? (setStyle([1, "xmas15", "Xmas2015", "xmas15", "-se", "hqm"]), (setHam("none"))) : (setStyle([1, "lxmas15", "Xmas2015", "xmas15", "-se", "hqm"])), (setHam("none"))))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "xmas17", "Xmas2017", "xmas17", "-se"]), (setHam("none")))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
                     </div>
                 </div>
 
@@ -2009,14 +2010,14 @@ function MOBGallery({color}) {
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="Obs" style={{ maxHeight: '45vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([6, "culpritobsidian", "CulpritObsidian", "culpritobsidian"]), (setHam("none")))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([13, "founders", "Founders", "founders"]), (setHam("none")))}><img src="img/collection/founders.png" /> Founders</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([20, "nexon", "Nexon", "nexon"]), (setHam("none")))}><img src="img/collection/nexon.png" /> Nexon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([14, "outforblood", "OutforBlood", "outforblood"]), (setHam("none")))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([21, "sd", "SplashDamage", "sd"]), (setHam("none")))}><img src="img/collection/sd.png" /> SplashDamage</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([15, "tacticalblack", "TacticalBlack", "obs50"]), (setHam("none")))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold"]), (setHam("none")))}><img src="img/collection/obsold.png" /> Turtleneck</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([17, "woodlandphoenix", "WoodlandPhoenix", "obs50"]), (setHam("none")))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([6, "culpritobsidian", "CulpritObsidian", "culpritobsidian", "-obs"]), (setHam("none")))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([13, "founders", "Founders", "founders", "-obs"]), (setHam("none")))}><img src="img/collection/founders.png" /> Founders</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([20, "nexon", "Nexon", "nexon", "-obs"]), (setHam("none")))}><img src="img/collection/nexon.png" /> Nexon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([14, "outforblood", "OutforBlood", "outforblood", "-obs"]), (setHam("none")))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "sd", "SplashDamage", "sd", "-obs"]), (setHam("none")))}><img src="img/collection/sd.png" /> SplashDamage</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([15, "tacticalblack", "TacticalBlack", "obs50", "-obs"]), (setHam("none")))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold", "-obs"]), (setHam("none")))}><img src="img/collection/obsold.png" /> Turtleneck</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([17, "woodlandphoenix", "WoodlandPhoenix", "obs50", "-obs"]), (setHam("none")))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
                     </div>
                 </div>
 
@@ -2032,11 +2033,11 @@ function MOBGallery({color}) {
                         <button className="dropdown-item" onClick={() => (setStyle([307, "kma", "KMA", "kma", "wear"]), (setHam("none")))}><img src="img/collection/kma.png" /> KMA</button>
                         <button className="dropdown-item" onClick={() => (setStyle([310, "royalforce", "RoyalForce", "royalforce", "wear"]), (setHam("none")))}><img src="img/collection/royalforce.png" /> RoyalForce</button>
                         <button className="dropdown-item" onClick={() => (hqm[0] == "true" ? ((setStyle([303, "betav", "BetaVeteran", "betav", "hqm"])), (setHam("none"))) : ((setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"])), (setHam("none"))))}><img src="img/collection/betav.png" /> BetaVeteran</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([304, "contraband", "Contraband", "contraband"]), (setHam("none")))}><img src="img/collection/contraband.png" /> Contraband</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([306, "faceit", "FACEIT", "faceit"]), (setHam("none")))}><img src="img/collection/faceit.png" /> FACEIT</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([308, "nuclearwinter", "Nuclear Winter", "nw"]), (setHam("none")))}><img src="img/collection/nw.png" /> Nuclear Winter</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([309, "rankedseason4", "Ranked Season 4", "rs4"]), (setHam("none")))}><img src="img/collection/rs4.png" /> Ranked Season 4</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([311, "tapir", "Tapir", "tapir"]), (setHam("none")))}><img src="img/collection/tapir.png" /> Tapir</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "contraband", "Contraband", "contraband", "-se"]), (setHam("none")))}><img src="img/collection/contraband.png" /> Contraband</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([306, "faceit", "FACEIT", "faceit", "-se"]), (setHam("none")))}><img src="img/collection/faceit.png" /> FACEIT</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([308, "nuclearwinter", "Nuclear Winter", "nw", "-se"]), (setHam("none")))}><img src="img/collection/nw.png" /> Nuclear Winter</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([309, "rankedseason4", "Ranked Season 4", "rs4", "-se"]), (setHam("none")))}><img src="img/collection/rs4.png" /> Ranked Season 4</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([311, "tapir", "Tapir", "tapir", "-se"]), (setHam("none")))}><img src="img/collection/tapir.png" /> Tapir</button>
                     </div>
                 </div>
 
@@ -2129,11 +2130,11 @@ function MOBGallery({color}) {
 
                 { /* HQM */ }
 
-                <div className={`mt-2 d-${style[4] == "hqm" ? "block" : "none"}`}>
+                <div className={`mt-2 d-${style[5] == "hqm" || style[4] == "hqm" ? "block" : "none"}`}>
                     <b>HQM: </b><br />
                     <div className="btn-group">
-                        <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), (setHam("none")), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
-                        <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), (setHam("none")), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
+                        <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), (setHam("none")), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([8, "pirin", "GuardianSpecial", "pirin", "-se", "hqm"]) : style[1] == "lxmas15" ? setStyle([1, "xmas15", "Xmas2015", "xmas15", "-se", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
+                        <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), (setHam("none")), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "-cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([8, "lpirin", "GuardianSpecial", "pirin", "-se", "hqm"]) : style[1] == "xmas15" ? setStyle([1, "lxmas15", "Xmas2015", "xmas15", "-se", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
                     </div>
                 </div>
 

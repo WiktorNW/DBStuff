@@ -19,20 +19,39 @@ function Changelog() {
     var [up3, setUp3] = useState(['none', 'right']);
     var [up3p1, setUp3p1] = useState(['none', 'right']);
     var [up3p2, setUp3p2] = useState(['none', 'right']);
-    var [up4, setUp4] = useState(['block', 'down']);
+    var [up4, setUp4] = useState(['none', 'right']);
+    var [up5, setUp5] = useState(['block', 'down']);
     return (
         <div className={`${isMobileDevice ? "pb-1" : "p-4"} bg-${color[2]} bg-gradient min-vh-100`}>
 
-            <h1 className={`m-auto ${isMobileDevice ? '' : 'w-75'} p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}>WFG Changelog</h1>
+            <h1 className={`m-auto ${isMobileDevice ? '' : 'w-100'} p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}>WFG Changelog</h1>
 
-            <div className={`mt-4 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-75'} p-3 bg-${color[0]} rounded shadow m-auto justify-content-center`}>
+            <div className={`mt-4 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto ${isMobileDevice ? '' : 'w-100'} p-3 bg-${color[0]} rounded shadow m-auto justify-content-center`}>
 
                 <Link to="/GAbout" className={`btn btn-${color[0]} bg-${color[0]} border-2 border-${color[1]} m-1`}><i className="bi bi-arrow-return-left" /> Back to the About</Link>
                 <Link to="/Gallery" className={`btn btn-${color[0]} bg-${color[0]} border-2 border-${color[1]} m-1`}><i className="bi bi-arrow-return-left" /> Back to the Gallery</Link>
 
             </div>
 
-            <div className={`m-auto ${isMobileDevice ? '' : 'w-75'} p-4 bg-${color[0]} mt-4 p-4 bg-${color[0]} text-${color[1]} rounded shadow`}>
+            <div className={`m-auto ${isMobileDevice ? '' : 'w-100'} p-4 bg-${color[0]} mt-4 p-4 bg-${color[0]} text-${color[1]} rounded shadow`}>
+
+                { /* Update 5 - 25.10.2026 */ }
+                <div>
+                    <h2 onClick={() => up5[0] == 'none' ? setUp5(["block", "down"]) : setUp5(["none", "right"])} style={{userSelect: "none"}}><i className={`bi bi-caret-${up5[1]}-fill`}></i> Update 5</h2>
+                    <h6>Merc Preview and "Overkill Idea"</h6>
+                    <div className={`d-${up5[0]}`}>
+                        <ul>
+                            <li><h5><b>NEW! Added new gallery: Merc Preview!</b></h5>- So now you can see how each merc's model look like with every skin on <b>both</b> Modern and Beta previews (with some exceptions).</li>
+                            <li><b>The new Main Page layout.</b></li>
+                            <li>Changed image wall's width from 75% to 100% and centered images that don't make full row</li>
+                            <li>Added rarity based shadow do images. So if you check cobalt skins, their images have blue shadow, obsidian - red and so on</li>
+                            <li>Full Merc - test view - option for Weapon Finish Gallery. More info about it on WFG itself</li>
+                            <li>Another batch of weapon skin images were refreshed, as you could see earlier with fully refreshed Twitch collection and majority of SplashDamage and all 3 Ranked collections</li>
+                        </ul>
+                        <p>This update is the final major update. That's because I want to create a new gallery website that will be more optimised, look better and use some new methods I didn't know about when I started this project.<br />
+                        <i>Changing it now would require rewriting whole website, too much spaghetti code</i></p>
+                    </div>
+                </div>
 
                 { /* Update 4 - 14.05.2025 */ }
                 <div>

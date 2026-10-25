@@ -4,14 +4,23 @@ import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import PCGallery from '../Components/PCgallery';
 import MOBGallery from '../Components/MOBgallery';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Gallery() {
+
+    useEffect(() => {
+        const isDevIcon = import.meta.env.DEV
+        ? "/favicon-dev.ico"
+        : "/favicon.ico";
+
+        const favicon = document.querySelector("link[rel='icon']").href = isDevIcon;
+
+    })
+
     document.title = "DBS - Weapon Finish Gallery";
     var isMobileDevice = /android|iphone|kindle|ipad/i.test(navigator.userAgent);
     var [winWidth, setWinWidth] = useState(window.innerWidth);
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    console.log(isDarkTheme)
 
     if (isDarkTheme){
         return(

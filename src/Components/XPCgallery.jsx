@@ -2009,13 +2009,13 @@ function XPCGallery({color}) {
     return (
         <div className={`p-4 bg-${color[2]} bg-gradient min-vh-100`}>
 
-            <h1 className={`m-auto w-75 p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}><i>Illegal</i> Weapon Finish Gallery</h1>
+            <h1 className={`m-auto w-100 p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}><i>Illegal</i> Weapon Finish Gallery</h1>
 
-            <p className={`m-auto w-75 p-1 mt-4 bg-${color[0]} rounded shadow text-center text-${color[1]} d-${exp}`}><i>Experimental mode, some new features may not work, yet</i></p>
+            <p className={`m-auto w-100 p-1 mt-4 bg-${color[0]} rounded shadow text-center text-${color[1]} d-${exp}`}><i>Experimental mode, some new features may not work, yet</i></p>
 
             { /* Navbar */ }
 
-            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} m-auto w-75 rounded p-2 shadow m-auto justify-content-center text-${color[1]}`}>
+            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} m-auto w-100 rounded p-2 shadow m-auto justify-content-center text-${color[1]}`}>
 
                 { /* Back to start */ }
 
@@ -2230,19 +2230,23 @@ function XPCGallery({color}) {
                     </div>
                 </div>
 
-            </div>
+                <div className={`mt-4 w-100 d-${style[4] ? "block" : "none"}`}>
 
-            <div className={`m-auto w-75 bg-${color[0]} text-${color[1]} rounded, shadow mt-4 justify-content-center`}>
-                <h2 className="text-center pt-4"><img src={style[0] >= 200 && style[0] <= 223 ? `img/merc/${style[3]}.png` : style[0] >= 100 && style[0] <= 143 ? `img/weapon/${color[1]}/${style[3]}.png` : `img/collection/${style[3]}.png`} className="mb-2" /> { style[2] }</h2>
-                <div className={`ms-5 d-${style[4] == "hqm" ? "block" : "none"}`}>
-                    <b>HQM: </b>
-                    <div className="btn-group">
-                        <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([3, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([3, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
-                        <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([3, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([3, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
+                    <div className={`ms-5 d-${style[4] == "hqm" ? "block" : "none"}`}>
+                        <b>HQM: </b>
+                        <div className="btn-group">
+                            <button className={`rounded-start btn btn${hqm[0] == "true" ? hqm[1] : hqm[2]}-success border-2`} onClick={() => (setHqm(["true", "", "-outline"]), style[1] == "lfragment" ? setStyle([4, "fragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "lpirin" ? setStyle([3, "pirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "lxmas15" ? setStyle([3, "xmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "lbetav" ? setStyle([303, "betav", "BetaVeteran", "betav", "hqm"]) : "")}>ON</button>
+                            <button className={`rounded-end btn btn${hqm[0] == "true" ? hqm[2] : hqm[1]}-danger border-2`} onClick={() => (setHqm(["false", "", "-outline"]), style[1] == "fragment" ? setStyle([4, "lfragment", "Cobalt Fragment", "cobalt", "hqm"]) : style[1] == "pirin" ? setStyle([3, "lpirin", "GuardianSpecial", "pirin", "hqm"]) : style[1] == "xmas15" ? setStyle([3, "lxmas15", "Xmas2015", "xmas15", "hqm"]) : style[1] == "betav" ? setStyle([303, "lbetav", "BetaVeteran", "betav", "hqm"]) : "")}>OFF</button>
+                        </div>
                     </div>
                 </div>
 
-                <div className={style[0] >= 200 && style[0] <= 223 || style[0] > 311 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]}`}>
+            </div>
+
+            <div className={`m-auto w-100 bg-${color[0]} text-${color[1]} rounded, shadow mt-4 justify-content-center`}>
+                <h2 className="text-center pt-4"><img src={style[0] >= 200 && style[0] <= 223 ? `img/merc/${style[3]}.png` : style[0] >= 100 && style[0] <= 143 ? `img/weapon/${color[1]}/${style[3]}.png` : `img/collection/${style[3]}.png`} className="mb-2" /> { style[2] }</h2>
+
+                <div className={style[0] >= 200 && style[0] <= 223 || style[0] > 311 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]} justify-content-around`}>
                     {renderWepImgs(style[0], style[1], style[2])}
                 </div>
                 <button onClick={() => exp == "none" ? setExp("block") : setExp("none")} className={exp == "none" ? `border-0 bg-${color[0]}` : `border-2 bg-${color[0]} border-${color[1]} text-${color[1]}`}>{exp == "none" ? "" : "EXP ON"}</button>

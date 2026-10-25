@@ -1,0 +1,43 @@
+:root{
+    --bs-box-shadow-def: 0 0.5rem 1rem #000000;
+    --bs-box-shadow-lead: 0 0.5rem 1rem #3f3f3f;
+    --bs-box-shadow-iron: 0 0.5rem 1rem #73645f;
+    --bs-box-shadow-bronze: 0 0.5rem 1rem #9e6542;
+    --bs-box-shadow-woodland: 0 0.5rem 1rem #594f36, 0 0.5rem 1rem #9e6542;
+    --bs-box-shadow-silver: 0 0.5rem 1rem #686b79;
+    --bs-box-shadow-gold: 0 0.5rem 1rem #edc12a;
+    --bs-box-shadow-cobalt: 0 0.5rem 1rem #1562b5;
+    --bs-box-shadow-se: 0 0.5rem 1rem #594f36;
+    --bs-box-shadow-obs: 0 0.5rem 1rem #f04d28;
+}
+
+.jw .shadow-def{
+    box-shadow: var(--bs-box-shadow-def) !important;
+}
+.jw .shadow-lead{
+    box-shadow: var(--bs-box-shadow-lead) !important;
+}
+.jw .shadow-iron{
+    box-shadow: var(--bs-box-shadow-iron) !important;
+}
+.jw .shadow-bronze{
+    box-shadow: var(--bs-box-shadow-bronze) !important;
+}
+.jw .shadow-woodland{
+    box-shadow: var(--bs-box-shadow-woodland) !important;
+}
+.jw .shadow-silver{
+    box-shadow: var(--bs-box-shadow-silver) !important;
+}
+.jw .shadow-gold{
+    box-shadow: var(--bs-box-shadow-gold) !important;
+}
+.jw .shadow-cobalt{
+    box-shadow: var(--bs-box-shadow-cobalt) !important;
+}
+.jw .shadow-se{
+    box-shadow: var(--bs-box-shadow-se) !important;
+}
+.jw .shadow-obs{
+    box-shadow: var(--bs-box-shadow-obs) !important;
+}

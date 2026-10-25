@@ -53,6 +53,11 @@ var color = [];
                                 <Link to="/Suits"><button className={`btn border-2 border-${color[1]} text-${color[1]} btn-${color[0]}}`}>Mercs' Suits Gallery <i className="bi bi-arrow-right"></i></button></Link>
                             </p>
                         </li>
+                        <li>
+                            <p>
+                                <Link to="/Mercs"><button className={`btn border-2 border-${color[1]} text-${color[1]} btn-${color[0]}}`}>Merc Preview Gallery <i className="bi bi-arrow-right"></i></button></Link>
+                            </p>
+                        </li>
                     </ul>
             </div>
 

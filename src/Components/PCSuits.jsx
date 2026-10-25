@@ -1,4 +1,5 @@
 import './../App.css';
+import './../stylejw.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
@@ -10,7 +11,7 @@ import suit_list from '../list/suit_list.js';
 function PCSuits() {
     var noImg = "img/noimg.png";
     var [grid, setGrid] = useState([3, 6]);
-    var [style, setStyle] = useState([300, "default", "Default", "default"]);
+    var [style, setStyle] = useState([300, "default", "Default", "default", "-def"]);
     var color = [];
     var isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     isDarkTheme ? color = ["dark", "light", "black"] : color = ["light", "dark", "white"];
@@ -19,74 +20,74 @@ function PCSuits() {
 
     const renderWepImgs = (lType, colID, col) => {
         switch (lType) {
-            case 1:
+            case 1: { /* NORMAL LIST */ }
                 return suit_list.mercList.map((mer) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
-            case 2:
+            case 2: { /* TacticalBlack */ }
                 return suit_list.tb.map((mer) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
-            case 3:
+            case 3: { /* FOUNDERS */ }
                 return suit_list.founder.map((mer) => (
                     <div className=" mt-4">
                         <p className={`h${grid[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 ))
-            case 10:
+            case 10: { /* AIMEE */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/aimee.png`} /> Aimee</p>
-                        <img src={`img/suits/${colID}/aimee.jpg` || noImg} alt={`${col} Aimee`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/aimee.jpg` || noImg} alt={`${col} Aimee`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 11:
+            case 11: { /* GUARDIAN */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/guardian.png`} /> Guardian</p>
-                        <img src={`img/suits/${colID}/guardian.jpg` || noImg} alt={`${col} Guardian`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/guardian.jpg` || noImg} alt={`${col} Guardian`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 12:
+            case 12: { /* HUNTER */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/hunter.png`} /> Hunter</p>
-                        <img src={`img/suits/${colID}/hunter.jpg` || noImg} alt={`${col} Hunter`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/hunter.jpg` || noImg} alt={`${col} Hunter`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 13:
+            case 13: { /* JAVELIN */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/javelin.png`} /> Javelin</p>
-                        <img src={`img/suits/${colID}/javelin.jpg` || noImg} alt={`${col} Javelin`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/javelin.jpg` || noImg} alt={`${col} Javelin`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 14:
+            case 14: { /* PHOENIX */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/phoenix.png`} /> Phoenix</p>
-                        <img src={`img/suits/${colID}/phoenix.jpg` || noImg} alt={`${col} Phoenix`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/phoenix.jpg` || noImg} alt={`${col} Phoenix`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 15:
+            case 15: { /* PROXY */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/proxy.png`} /> Proxy</p>
-                        <img src={`img/suits/${colID}/proxy.jpg` || noImg} alt={`${col} Proxy`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/proxy.jpg` || noImg} alt={`${col} Proxy`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
-            case 16:
+            case 16: { /* TURTLE */ }
                 return (
                     <div className=" mt-4">
                         <p className="h4"><img src={`img/merc/turtle.png`} /> Turtle</p>
-                        <img src={`img/suits/${colID}/turtle.jpg` || noImg} alt={`${col} Turtle`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                        <img src={`img/suits/${colID}/turtle.jpg` || noImg} alt={`${col} Turtle`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                     </div>
                 )
             { /* Default */ }
@@ -94,22 +95,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Present on current DB</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.defMercList[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Different on old DB</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.defMercList[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -119,22 +120,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.huntBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.huntBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -144,22 +145,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.grdBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.grdBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -169,22 +170,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.javBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.javBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -194,22 +195,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.turtleBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.turtleBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -219,22 +220,47 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aimeeBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aimeeBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
+                                </div>
+                            ))}
+                        </div></div>
+                    </div>)
+            { /* Suspect-bug */ }
+            case 310:
+                return (<div>
+                        <div className="mt-4">
+                            <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
+                            {suit_list.suspectBug[0].map((mer) =>(
+                                <div className="mb-4">
+                                    <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
+                                </div>
+                            ))}
+                        </div></div>
+
+                        <div className="mt-4">
+                            <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
+                            {suit_list.suspectBug[1].map((mer) =>(
+                                <div className="mb-4">
+                                    <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -244,22 +270,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.thunBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.thunBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -269,22 +295,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.humbleBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.humbleBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -294,22 +320,22 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.obBug[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.obBug[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -319,46 +345,47 @@ function PCSuits() {
                 return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.SDSpecial[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.filename}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} title={`${mer.filename == "javelin" ? JavSDMsg : ""}`} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} title={`${mer.filename == "javelin" ? JavSDMsg : ""}`} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.SDSpecial[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/merc/${mer.name.toLowerCase()}.png`} /> {mer.name}</p>
-                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${colID}/${mer.filename}.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${style[4]} w-100`} />
                                 </div>
                             ))}
                         </div></div>
                     </div>)
+
                 case 201: { /* AIMEE */ }
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aimee[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/aimee.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/aimee.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aimee[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/aimee.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/aimee.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -367,22 +394,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.arty[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/arty.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/arty.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.arty[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/arty.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/arty.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -391,22 +418,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aura[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/aura.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/aura.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.aura[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/aura.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/aura.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -415,22 +442,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.bushwhacker[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/bushwhacker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/bushwhacker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.bushwhacker[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/bushwhacker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/bushwhacker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -439,22 +466,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.fletcher[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/fletcher.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/fletcher.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.fletcher[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/fletcher.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/fletcher.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -463,22 +490,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.fragger[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/fragger.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/fragger.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.fragger[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/fragger.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/fragger.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -487,22 +514,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.guardian[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/guardian.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/guardian.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.guardian[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/guardian.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/guardian.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -511,22 +538,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.hunter[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/hunter.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/hunter.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.hunter[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/hunter.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/hunter.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -535,22 +562,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.javelin[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/javelin.jpg` || noImg} title={`${mer.fileFolder == "sd" ? JavSDMsg : ""}`} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/javelin.jpg` || noImg} title={`${mer.fileFolder == "sd" ? JavSDMsg : ""}`} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.javelin[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/javelin.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/javelin.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -559,22 +586,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.kira[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/kira.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/kira.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.kira[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/kira.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/kira.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -583,22 +610,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.nader[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/nader.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/nader.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.nader[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/nader.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/nader.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -607,22 +634,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.phantom[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/phantom.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/phantom.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.phantom[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/phantom.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/phantom.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -631,22 +658,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.phoenix[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/phoenix.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/phoenix.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.phoenix[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/phoenix.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/phoenix.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -655,22 +682,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.proxy[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/proxy.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/proxy.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.proxy[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/proxy.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/proxy.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -679,22 +706,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.redeye[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/redeye.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/redeye.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.redeye[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/redeye.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/redeye.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -703,22 +730,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.rhino[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/rhino.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/rhino.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.rhino[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/rhino.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/rhino.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -727,22 +754,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.sawbonez[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/sawbonez.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/sawbonez.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.sawbonez[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/sawbonez.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/sawbonez.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -751,22 +778,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.skyhammer[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/skyhammer.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/skyhammer.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.skyhammer[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/skyhammer.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/skyhammer.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -775,22 +802,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.sparks[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/sparks.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/sparks.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.sparks[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/sparks.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/sparks.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -799,22 +826,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.stoker[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/stoker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/stoker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.stoker[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/stoker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/stoker.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -823,22 +850,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.thunder[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/thunder.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/thunder.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.thunder[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/thunder.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/thunder.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -847,22 +874,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.turtle[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/turtle.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/turtle.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.turtle[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/turtle.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/turtle.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -871,22 +898,22 @@ function PCSuits() {
                     return (<div>
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Official Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.vassili[0].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/vassili.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/vassili.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
 
                         <div className="mt-4">
                             <h3 className={`text-center text-${color[1]}`}>Suit-bug Only Suits</h3>
-                            <div className={`row row-cols-${grid[0]}`}>
+                            <div className={`row row-cols-${grid[0]} justify-content-around`}>
                             {suit_list.vassili[1].map((mer) =>(
                                 <div className="mb-4">
                                     <p className={`h${grid[1]} text-${color[1]}`}><img src={`img/collection/${mer.rar}.png`} /> {mer.suitName}</p>
-                                    <img src={`img/suits/${mer.fileFolder}/vassili.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className="img-fluid rounded shadow w-100" />
+                                    <img src={`img/suits/${mer.fileFolder}/vassili.jpg` || noImg} alt={`${col} ${mer.name}`} onError={ (e) => (e.target.src = noImg) } className={`img-fluid rounded shadow${mer.shadow} w-100`} />
                                 </div>
                             ))}
                         </div></div>
@@ -895,13 +922,13 @@ function PCSuits() {
     }
 
     return (
-        <div className={`p-4 bg-${color[2]} bg-gradient min-vh-100`}>
+        <div className={`jw p-4 bg-${color[2]} bg-gradient min-vh-100`}>
 
-            <h1 className={`m-auto w-75 p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}>Mercs' Suits Gallery</h1>
+            <h1 className={`m-auto w-100 p-4 bg-${color[0]} rounded shadow text-center text-${color[1]}`}>Mercs' Suits Gallery</h1>
 
             { /* Navbar */ }
 
-            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto w-75 rounded p-2 shadow m-auto justify-content-center`}>
+            <div className={`mt-4 p-3 navbar sticky-top bg-${color[0]} text-${color[1]} m-auto w-100 rounded p-2 shadow m-auto justify-content-center`}>
 
                 { /* Back to start */ }
 
@@ -915,17 +942,17 @@ function PCSuits() {
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="nonSE" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([300, "default", "Default", "default"]))}><img src="img/collection/default.png" /> Default</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([301, "dirt", "Dirt", "dirt"]))}><img src="img/collection/dirt.png" /> Dirt</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([301, "galvanized", "Galvanized", "galvanized"]))}><img src="img/collection/galvanized.png" /> Galvanized</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "woodland", "Woodland", "woodland"]))}><img src="img/collection/woodland.png"/> Woodland</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "carbon", "Carbon", "carbon"]))}><img src="img/collection/carbon.png" /> Carbon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "urban", "Urban", "urban"]))}><img src="img/collection/urban.png" /> Urban</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "bamboo", "Bamboo", "bamboo"]))}><img src="img/collection/bamboo.png" /> Bamboo</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "crown", "Crown", "crown"]))}><img src="img/collection/crown.png" /> Crown</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "swiss", "Swiss", "swiss"]))}><img src="img/collection/swiss.png" /> Swiss</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "fragment", "Fragment", "fragment"]))}><img src="img/collection/fragment.png" /> Fragment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([1, "shard", "Shard", "shard"]))}><img src="img/collection/shard.png" /> Shard</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([300, "default", "Default", "default", "-def"]))}><img src="img/collection/default.png" /> Default</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([301, "dirt", "Dirt", "dirt", "-lead"]))}><img src="img/collection/dirt.png" /> Dirt</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([301, "galvanized", "Galvanized", "galvanized", "-iron"]))}><img src="img/collection/galvanized.png" /> Galvanized</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "woodland", "Woodland", "woodland", "-woodland"]))}><img src="img/collection/woodland.png"/> Woodland</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "carbon", "Carbon", "carbon", "-silver"]))}><img src="img/collection/carbon.png" /> Carbon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "urban", "Urban", "urban", "-silver"]))}><img src="img/collection/urban.png" /> Urban</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "bamboo", "Bamboo", "bamboo", "-gold"]))}><img src="img/collection/bamboo.png" /> Bamboo</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "crown", "Crown", "crown", "-gold"]))}><img src="img/collection/crown.png" /> Crown</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "swiss", "Swiss", "swiss", "-gold"]))}><img src="img/collection/swiss.png" /> Swiss</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "fragment", "Fragment", "fragment", "-cobalt"]))}><img src="img/collection/fragment.png" /> Fragment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "shard", "Shard", "shard", "-cobalt"]))}><img src="img/collection/shard.png" /> Shard</button>
                     </div>
                 </div>
 
@@ -937,49 +964,51 @@ function PCSuits() {
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="SE" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([303, "containment", "Containment", "containment"]))}><img src="img/collection/containment.png" /> Containment</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([15, "culprit", "Culprit", "culprit"]))}><img src="img/collection/culprit.png" /> Culprit</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([15, "cybereye", "CyberEye", "cybereye"]))}><img src="img/collection/cybereye.png" /> CyberEye</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([10, "detective", "Detective", "detective"]))}><img src="img/collection/detective.png" /> Detective</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([306, "faction", "Faction", "faction"]))}><img src="img/collection/faction.png" /> Faction</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([302, "ghostclip", "Ghostclip", "ghostclip"]))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([11, "pirin", "GuardianSpecial", "pirin"]))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([301, "halloween17", "Halloween17", "halloween17"]))}><img src="img/collection/halloween17.png" /> Halloween17</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([303, "hexagon", "Hexagon", "hexagon"]))}><img src="img/collection/hexagon.png" /> Hexagon</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([307, "humble", "Humble", "humble"]))}><img src="img/collection/humble.png" /> Humble</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([12, "arctic", "HunterSpecial", "arctic"]))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([13, "javelin", "Javelin", "javelin"]))}><img src="img/collection/javelin.png" /> Javelin</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([304, "ranked2", "RankedEagle", "ranked2"]))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([302, "ranked4", "ScorchedMetal", "ranked4"]))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([304, "ranked3", "Shatter", "ranked3"]))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([305, "suspect", "Suspect", "suspect"]))}><img src="img/collection/suspect.png" /> Suspect</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([302, "twitch", "Twitch", "twitch"]))}><img src="img/collection/twitch.png" /> Twitch</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([305, "xmas15", "Xmas2015", "xmas15"]))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([301, "xmas17", "Xmas2017", "xmas17"]))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([303, "containment", "Containment", "containment", "-se"]))}><img src="img/collection/containment.png" /> Containment</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([15, "culprit", "Culprit", "culprit", "-se"]))}><img src="img/collection/culprit.png" /> Culprit</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([15, "cybereye", "CyberEye", "cybereye", "-se"]))}><img src="img/collection/cybereye.png" /> CyberEye</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([10, "detective", "Detective", "detective", "-se"]))}><img src="img/collection/detective.png" /> Detective</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([306, "faction", "Faction", "faction", "-se"]))}><img src="img/collection/faction.png" /> Faction</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([302, "ghostclip", "Ghostclip", "ghostclip", "-se"]))}><img src="img/collection/ghostclip.png" /> Ghostclip</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([11, "pirin", "GuardianSpecial", "pirin", "-se"]))}><img src="img/collection/pirin.png" /> GuardianSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([301, "halloween17", "Halloween17", "halloween17", "-se"]))}><img src="img/collection/halloween17.png" /> Halloween17</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([303, "hexagon", "Hexagon", "hexagon", "-se"]))}><img src="img/collection/hexagon.png" /> Hexagon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([307, "humble", "Humble", "humble", "-se"]))}><img src="img/collection/humble.png" /> Humble</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([12, "arctic", "HunterSpecial", "arctic", "-se"]))}><img src="img/collection/arctic.png" /> HunterSpecial</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([13, "javelin", "Javelin", "javelin", "-se"]))}><img src="img/collection/javelin.png" /> Javelin</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "ranked2", "RankedEagle", "ranked2", "-se"]))}><img src="img/collection/ranked2.png" /> RankedEeagle (Ranked 2)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([302, "ranked4", "ScorchedMetal", "ranked4", "-se"]))}><img src="img/collection/ranked4.png" /> ScorchedMetal (Ranked 4)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "ranked3", "Shatter", "ranked3", "-se"]))}><img src="img/collection/ranked3.png" /> Shatter (Ranked 3)</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([310, "suspect", "Suspect", "suspect", "-se"]))}><img src="img/collection/suspect.png" /> Suspect</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([302, "twitch", "Twitch", "twitch", "-se"]))}><img src="img/collection/twitch.png" /> Twitch</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([1, "woodland", "Woodland", "woodland", "-woodland"]))}><img src="img/collection/woodland.png"/> Woodland</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([305, "xmas15", "Xmas2015", "xmas15", "-se"]))}><img src="img/collection/xmas15.png" /> Xmas2015</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([301, "xmas17", "Xmas2017", "xmas17", "-se"]))}><img src="img/collection/xmas17.png" /> Xmas2017</button>
                     </div>
                 </div>
 
                 { /* Obsidian */}
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-3">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} dropdown-toggle`} type="button" id="Obs" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Obsidian
                     </button>
 
                     <div className={`dropdown-menu dropdown-menu-${color[0]} overflow-auto`} aria-labelledby="Obs" style={{ maxHeight: '70vh' }}>
-                        <button className="dropdown-item" onClick={() => (setStyle([15, "culpritobsidian", "CulpritObsidian", "culpritobsidian"]))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([3, "founders", "Founders", "founders"]))}><img src="img/collection/founders.png" /> Founders</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([308, "outforblood", "OutforBlood", "outforblood"]))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([309, "sd", "SplashDamage", "sd"]))}><img src="img/collection/sd.png" /> SplashDamage</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([2, "tacticalblack", "TacticalBlack", "obs50"]))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold"]))}><img src="img/collection/obsold.png" /> Turtleneck</button>
-                        <button className="dropdown-item" onClick={() => (setStyle([14, "woodlandphoenix", "WoodlandPhoenix", "obs50"]))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([15, "culpritobsidian", "CulpritObsidian", "culpritobsidian", "-obs"]))}><img src="img/collection/culpritobsidian.png" /> CulpritObsidian</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([3, "founders", "Founders", "founders", "-obs"]))}><img src="img/collection/founders.png" /> Founders</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "nexon", "Nexon", "nexon", "-obs"]))}><img src="img/collection/nexon.png" /> Nexon</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([308, "outforblood", "OutforBlood", "outforblood", "-obs"]))}><img src="img/collection/outforblood.png" /> OutforBlood</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([304, "sd", "SplashDamage", "sd", "-obs"]))}><img src="img/collection/sd.png" /> SplashDamage</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([2, "tacticalblack", "TacticalBlack", "obs50", "-obs"]))}><img src="img/collection/obs50.png" /> TacticalBlack</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([16, "turtleneck", "Turtleneck", "obsold", "-obs"]))}><img src="img/collection/obsold.png" /> Turtleneck</button>
+                        <button className="dropdown-item" onClick={() => (setStyle([14, "woodlandphoenix", "WoodlandPhoenix", "obs50", "-obs"]))}><img src="img/collection/obs50.png" /> WoodlandPhoenix</button>
                     </div>
                 </div>
 
                 { /* Merc */ }
 
-                <div className="dropdown me-2">
+                <div className="dropdown me-3">
                     <button className={`btn border-2 border-${color[1]} btn-${color[0]} dropdown-toggle`} type="button" id="wep" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Mercs
                     </button>
@@ -1013,9 +1042,9 @@ function PCSuits() {
 
                 { /* Suit-bug Video */}
 
-                <button className={`btn border-2 border-${color[1]} btn-${color[0]} me-3`}>
+                {/* <button className={`btn border-2 border-${color[1]} btn-${color[0]} me-3`}>
                     Suit-bug Video (W.I.P) <i className="bi bi-youtube" />
-                </button>
+                </button> */}
 
                 { /* Grid */}
 
@@ -1031,10 +1060,10 @@ function PCSuits() {
 
             </div>
 
-            <div className={`m-auto w-75 bg-${color[0]} text-${color[1]} rounded shadow mt-4 justify-content-center`}>
+            <div className={`m-auto w-100 bg-${color[0]} text-${color[1]} rounded shadow mt-4 justify-content-center`}>
                 <h2 className="text-center pt-4"><img src={style[0] >= 200 && style[0] <= 223 ? `img/merc/${style[3]}.png` : `img/collection/${style[3]}.png`} className="mb-2" /> { style[2] }</h2>
 
-                <div className={style[0] >= 10 ? `p-5 w-100` : `p-5 row row-cols-${grid[0]}`}>
+                <div className={style[0] >= 10 ? `p-5 w-100 justify-content-around` : `p-5 row row-cols-${grid[0]} justify-content-around`}>
                     {renderWepImgs(style[0], style[1], style[2])}
                 </div>
             </div>
